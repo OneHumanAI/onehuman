@@ -31,7 +31,7 @@ OneHuman is **not** workforce AI security. It does not govern the agents your ow
 
 ## Why this?
 
-People now let AI agents work in their business tools for them: Claude in Chrome, ChatGPT Atlas, Codex, Comet. The agent works **inside the person's signed-in session**. Same cookies, same IP, same browser. To your server, the agent *is* the customer.
+People now let AI agents work in their business tools for them: Claude in Chrome, ChatGPT agent, Codex, Comet. The agent works **inside the person's signed-in session**. Same cookies, same IP, same browser. To your server, the agent *is* the customer.
 
 That breaks three things:
 
@@ -76,12 +76,12 @@ npx onehumanai verify http://localhost:3000 /api/customers # four checks, in sec
 
 Node 22.13 or newer. Express 4/5, Connect, a Next.js custom server or plain `node:http`. In a pnpm, yarn or bun project it uses your package manager. Prefer to wire it by hand? See the [docs](https://onehuman.ai/docs) or [QUICKSTART.md](QUICKSTART.md).
 
-Want to see what agents already do in your product? Ask for the **free 30 day agent report** (watch only) or [book a demo](mailto:hello@onehuman.ai).
+Want to see what agents already do in your product? Ask for the **[free 30 day agent report](https://onehuman.ai/report)** (watch only) or [book a demo](https://cal.com/onehumanai).
 
 ## Try it in one minute
 
 1. Open the [live CRM demo](https://onehuman.ai/crm) yourself and click around. Everything works.
-2. Open the same page with an AI agent (Claude in Chrome, ChatGPT Atlas, Comet) and ask it for the customer list or an export.
+2. Open the same page with an AI agent (Claude in Chrome, ChatGPT agent, Comet) and ask it for the customer list or an export.
 3. Watch the private fields get hidden and the export held for a passkey, while a person's own clicks still go through.
 
 Found a way to fool it? [Open an issue](https://github.com/OneHumanAI/onehumanai/issues). Hard criticism is welcome.
