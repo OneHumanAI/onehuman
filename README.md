@@ -1,35 +1,42 @@
 <p align="center">
-  <img src="https://onehuman.ai/logo-mark.svg" width="56" alt="">
+<img src="https://onehuman.ai/logo-mark.svg" width="56" alt="">
 </p>
 <h1 align="center">OneHuman</h1>
 <p align="center">
-  <b>Your customers log in with AI agents. Decide what they may see and do.</b><br>
-  Access control for your customers' AI agents. OneHuman hides private data from AI agents and asks the owner<br>before anything risky. Every decision is signed on your own server.
+<b>Your customers send Claude, ChatGPT, Comet and Codex into your app. Decide what the agent can do.</b><br>
+OneHuman spots the agent, hides private data, and asks the owner before exports or payments.<br>Every decision is signed on your own server.
 </p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/onehumanai"><img alt="npm" src="https://img.shields.io/npm/v/onehumanai?color=3ddc84&label=npm"></a>
-  <a href="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="LICENSE"><img alt="Apache-2.0 SDK, BUSL-1.1 engine" src="https://img.shields.io/badge/license-Apache--2.0%20SDK%20%C2%B7%20BUSL--1.1%20engine-blue"></a>
-  <a href="https://onehuman.ai"><img alt="live demo" src="https://img.shields.io/badge/live-demo-0f8a4b"></a>
+<a href="https://www.npmjs.com/package/onehumanai"><img alt="npm" src="https://img.shields.io/npm/v/onehumanai?color=3ddc84&label=npm"></a>
+<a href="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml/badge.svg"></a>
+<a href="LICENSE"><img alt="Apache-2.0 SDK, BUSL-1.1 engine" src="https://img.shields.io/badge/license-Apache--2.0%20SDK%20%C2%B7%20BUSL--1.1%20engine-blue"></a>
+<a href="https://onehuman.ai"><img alt="live demo" src="https://img.shields.io/badge/live-demo-0f8a4b"></a>
 </p>
 <p align="center">
-  <a href="https://onehuman.ai"><b>Live demo</b></a> ·
-  <a href="https://onehuman.ai/docs">Docs</a> ·
-  <a href="QUICKSTART.md">60-second overview</a> ·
-  <a href="https://onehuman.ai/measurements">How we measured</a> ·
-  <a href="https://onehuman.ai/portal">Portal</a>
+<a href="https://onehuman.ai"><b>Live demo</b></a> ·
+<a href="https://onehuman.ai/docs">Docs</a> ·
+<a href="https://onehuman.ai/compare">Compare</a> ·
+<a href="QUICKSTART.md">60-second overview</a> ·
+<a href="https://onehuman.ai/measurements">How we measured</a> ·
+<a href="https://onehuman.ai/portal">Portal</a>
 </p>
 
 ---
 
+## Who is this for?
+
+B2B SaaS teams whose customers now use AI agents inside their accounts. If your product holds customer lists, invoices, settings or exports, this is for you.
+
+OneHuman is **not** workforce AI security. It does not govern the agents your own employees run. It governs the agents your **customers** bring into your product.
+
 ## Why this?
 
-People now let AI agents use their bank, their CRM and their insurer for them: Claude in Chrome, ChatGPT Atlas, Codex, Comet. The agent works **inside the person's signed-in session**. Same cookies, same IP, same browser. To your server, the agent *is* the customer.
+People now let AI agents work in their business tools for them: Claude in Chrome, ChatGPT Atlas, Codex, Comet. The agent works **inside the person's signed-in session**. Same cookies, same IP, same browser. To your server, the agent *is* the customer.
 
 That breaks three things:
 
-- **Data leaves.** Balances, customer lists and medical records flow into a third-party model and its logs.
-- **Actions happen by mistake.** A misread page or a prompt injection moves money, deletes records, changes settings.
+- **Data leaves.** Customer lists, emails, invoices and internal notes flow into a third-party model and its logs.
+- **Actions happen by mistake.** A misread page or a prompt injection exports your data, deletes records, changes billing or settings.
 - **Nobody can say who did it.** Afterwards there is no record of whether the person acted or the agent did.
 
 Bot management stops bots at the door and MFA checks who logged in. Neither sees the agent a real customer invited into their own session. OneHuman works inside the session, at the endpoint that returns the data.
@@ -41,6 +48,18 @@ Bot management stops bots at the door and MFA checks who logged in. Neither sees
 - **Your rule per endpoint.** `allow`, `mask`, `step_up` or `block`, in a JSON file or the portal, decided on your server.
 - **Hides what is already on screen.** Values you mark are blurred in the browser the instant an agent appears.
 - **Proof a person agreed.** When an action needs a human, they confirm with a passkey (Touch ID, Windows Hello). Every decision is signed, and an auditor can check it offline without trusting us.
+- **Watch first, enforce later.** Start in watch only mode. See what agents do in your app, then turn on rules. If OneHuman ever fails, your app keeps working.
+
+## How it is different
+
+| | Protects | Works where |
+| --- | --- | --- |
+| Bot management (Cloudflare, DataDome, Akamai, HUMAN) | Your site from bots | At the door, before login |
+| Identity and MFA (Stytch, Transmit, Vouched) | Who logs in | At login |
+| Workforce AI security (Noma) | The agents your employees run | Inside your company |
+| **OneHuman** | What your customers' agents may see and do | Inside the customer's session, on your own server |
+
+Noma governs the agents your employees use. OneHuman governs the agents your customers bring. Full scored table with 10 companies: [onehuman.ai/compare](https://onehuman.ai/compare) (marked from public documentation as of September 2026).
 
 ## Quick start
 
@@ -52,16 +71,18 @@ It reads your app, then asks three short questions: what to protect, whether to 
 
 ```bash
 npm start
-npx onehumanai verify http://localhost:3000 /api/balance    # four checks, in seconds
+npx onehumanai verify http://localhost:3000 /api/customers # four checks, in seconds
 ```
 
 Node 22.13 or newer. Express 4/5, Connect, a Next.js custom server or plain `node:http`. In a pnpm, yarn or bun project it uses your package manager. Prefer to wire it by hand? See the [docs](https://onehuman.ai/docs) or [QUICKSTART.md](QUICKSTART.md).
 
+Want to see what agents already do in your product? Ask for the **free 30 day agent report** (watch only) or [book a demo](mailto:hello@onehuman.ai).
+
 ## Try it in one minute
 
-1. Open the [live bank demo](https://onehuman.ai/bank) yourself and click around. Everything works.
-2. Open the same page with an AI agent (Claude in Chrome, ChatGPT Atlas, Comet) and ask it for the balance or the statement.
-3. Watch the balance get hidden and the download refused, while a person's own clicks still go through.
+1. Open the [live CRM demo](https://onehuman.ai/crm) yourself and click around. Everything works.
+2. Open the same page with an AI agent (Claude in Chrome, ChatGPT Atlas, Comet) and ask it for the customer list or an export.
+3. Watch the private fields get hidden and the export held for a passkey, while a person's own clicks still go through.
 
 Found a way to fool it? [Open an issue](https://github.com/OneHumanAI/onehumanai/issues). Hard criticism is welcome.
 
