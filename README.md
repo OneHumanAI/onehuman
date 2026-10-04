@@ -248,7 +248,7 @@ Issues and pull requests are welcome, see [`CONTRIBUTING.md`](CONTRIBUTING.md). 
 
 ## License
 
-OneHuman is licensed in two parts. © 2026 Arif Babayev.
+OneHuman is licensed in two parts. © 2026 OneHuman Inc.
 
 | Part | Licence | What it means for you |
 | --- | --- | --- |
