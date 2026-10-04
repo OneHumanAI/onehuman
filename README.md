@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://onehuman.ai/logo-mark.svg" width="56" alt="">
+  <img src="docs/readme/logo.svg" width="64" alt="OneHuman">
 </p>
 <h1 align="center">OneHuman</h1>
 <p align="center">
