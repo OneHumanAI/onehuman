@@ -9,6 +9,7 @@
 - **`verify` explains a 401** (the route needs a signed-in user: `--cookie`) even when OneHuman decided before the app's login check.
 - **`npx onehumanai --help`** lists every command and option; an unknown command says so.
 - **`init` says what the API key is for:** your dashboard and the free 30-day AI agent report.
+- **An owner's "never" asks a possible person instead of refusing them:** when only the environment looked like an agent (a side panel, which devtools or a translation panel also opens), the owner's "never" now asks for their passkey (step-up) rather than blocking. A proven agent is still refused.
 
 ## 0.7.3
 - **Fixed: an agent seen before the login was known was missed on the first protected request.** The page script reports from the first page, often before the app's login middleware has run; that evidence now moves to the login's session before its first decision.

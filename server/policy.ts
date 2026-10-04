@@ -154,6 +154,10 @@ export function evaluate(policy: Policy, resource: string, a: Assessment, id: st
  * stricter ('never': the agent is refused this resource). The owner can make it looser ('allow') only where the
  * company's rule for agents is 'mask' or 'step_up'; a company 'block' stays a block. It applies only when the rule's
  * agent branches fired: a person at the controls is never affected.
+ *
+ * 'never' refuses a proven agent outright. When only the environment looked like one (the artifact branch: a side
+ * panel, which devtools or a translation panel also opens), a person may well be the one asking, so 'never' asks for
+ * the owner's passkey instead of refusing: an agent cannot give it, a person can.
  */
 export function ownerMayLoosen(rule: Rule | undefined): boolean {
   return !!rule && (rule.onAgent === 'mask' || rule.onAgent === 'step_up');
@@ -161,6 +165,6 @@ export function ownerMayLoosen(rule: Rule | undefined): boolean {
 export function applyOwnerChoice(d: Decision, rule: Rule | undefined, choice: 'allow' | 'never' | null): Decision {
   if (!choice || (d.branch !== 'agent' && d.branch !== 'artifact')) return d;
   if (choice === 'allow' && !ownerMayLoosen(rule)) return d;
-  const computed: Mode = choice === 'never' ? 'block' : 'allow';
+  const computed: Mode = choice === 'allow' ? 'allow' : d.branch === 'agent' || d.computed === 'block' ? 'block' : 'step_up';
   return { ...d, computed, decision: d.enforced ? computed : 'allow', reasonCodes: [...d.reasonCodes, choice === 'never' ? 'OWNER_DENIED' : 'OWNER_ALLOWED'] };
 }
