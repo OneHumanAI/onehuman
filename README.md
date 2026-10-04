@@ -26,7 +26,7 @@
   <a href="https://onehuman.ai/portal">Portal</a>
 </p>
 
-<!-- IMAGE: hero. The same CRM record for a person and for an AI agent: email and phone turn to dots, "Export contacts" waits for a passkey. GIF or PNG, about 1800 px wide. -->
+<p align="center"><img src="docs/readme/hero.gif" width="900" alt="The same CRM page for a person and for an AI agent: email, phone and deal value turn to dots, and Export all contacts waits for the owner's passkey"></p>
 
 ---
 
@@ -71,7 +71,7 @@ Every result, including the one that gets through: [Agent scorecard →](https:/
 ### Spots the agent in 0.1 s
 Agent tools leave traces in the page. OneHuman sees them before the agent's first click.
 
-<!-- IMAGE: a page with an "AI agent" flag appearing as the agent attaches. -->
+<img src="docs/readme/spot.png" width="100%" alt="OneHuman flags Claude in Chrome 0.3 s after it attaches, before its first click">
 
 </td>
 <td width="50%" valign="top">
@@ -79,7 +79,7 @@ Agent tools leave traces in the page. OneHuman sees them before the agent's firs
 ### Private data turns to dots
 Emails, phones and invoice totals are hidden from the agent. Everything else keeps working.
 
-<!-- IMAGE: the email and phone fields masked, a normal action still going through. -->
+<img src="docs/readme/mask.png" width="100%" alt="Email, phone and invoice amount masked for the agent while a stage update still goes through">
 
 </td>
 </tr>
@@ -89,7 +89,7 @@ Emails, phones and invoice totals are hidden from the agent. Everything else kee
 ### Exports wait for a passkey
 Exports, deletes and billing changes need the owner's Touch ID or Windows Hello. The agent can't approve itself.
 
-<!-- IMAGE: the passkey dialog for contacts.export, then "approved". -->
+<img src="docs/readme/passkey.png" width="100%" alt="Touch ID dialog to approve contacts.export, then approved and signed">
 
 </td>
 <td width="50%" valign="top">
@@ -97,7 +97,7 @@ Exports, deletes and billing changes need the owner's Touch ID or Windows Hello.
 ### Tells a hand from a program
 A person's pointer curves, trembles and slows onto the button. A driver jumps and clicks in 1 to 4 ms. A real person is let in by their own click.
 
-<!-- IMAGE: a human pointer trajectory next to an agent's instant click. -->
+<img src="docs/readme/kinematics.png" width="100%" alt="A person's curved pointer path with 61 points and a 142 ms hold next to an agent's 2 ms click with no movement">
 
 </td>
 </tr>
@@ -107,7 +107,7 @@ A person's pointer curves, trembles and slows onto the button. A driver jumps an
 ### Every decision is signed
 Allowed, hidden or approved: each one is signed with Ed25519 on your server. `npx onehumanai verify-proof` checks it offline, without trusting us.
 
-<!-- IMAGE: terminal output of npx onehumanai verify-proof. -->
+<img src="docs/readme/proof.png" width="100%" alt="npx onehumanai verify-proof output: 5 of 5 proofs valid">
 
 </td>
 <td width="50%" valign="top">
@@ -115,7 +115,7 @@ Allowed, hidden or approved: each one is signed with Ed25519 on your server. `np
 ### Watch first, block later
 Observe mode records what would have happened and blocks nothing. Switch to enforce when you trust it.
 
-<!-- IMAGE: the portal activity view with "would hide" / "would ask" decisions. -->
+<img src="docs/readme/observe.png" width="100%" alt="Portal decisions in observe mode: would block, would ask, would hide, nothing enforced">
 
 </td>
 </tr>
