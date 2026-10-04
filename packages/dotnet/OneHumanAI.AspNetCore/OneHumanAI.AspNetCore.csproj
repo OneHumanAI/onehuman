@@ -12,7 +12,7 @@
     <PackageTags>ai-agent;agent-detection;security;aspnetcore;passkey;webauthn</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://onehuman.ai</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/OneHumanAI/onehumanai</RepositoryUrl>
+    <RepositoryUrl>https://github.com/OneHumanAI/onehuman</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>

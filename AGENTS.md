@@ -167,4 +167,4 @@ Routes under `basePath`: `GET /sdk.js`, `POST /signals`, `GET /connection`, `GET
 
 Options: `secret` (required, ≥32 B) · `policy` (path or object, required) · `db` (`sqlite:./file` | `memory` | `libsql://…`) · `identify(req)` · `basePath` (`/onehuman`) · `cookie` (`oh_sid`) · `secure` · `tenant` · `respond` (`true`) · `webauthnReclaim` (`true`). · `proofEpoch` / `retiredProofKeys` (proof key rotation; `npx onehumanai proof-keys`) · `anchor: { tsa, everyMs }` (RFC 3161 timestamps of the audit chain, off by default; `npx onehumanai anchors`).
 
-Live demo: https://onehuman.ai · Source and docs: https://github.com/OneHumanAI/onehumanai (SDK and middleware Apache-2.0; engine BUSL-1.1 — production use granted) · https://onehuman.ai/docs · https://onehuman.ai/measurements.
+Live demo: https://onehuman.ai · Source and docs: https://github.com/OneHumanAI/onehuman (SDK and middleware Apache-2.0; engine BUSL-1.1 — production use granted) · https://onehuman.ai/docs · https://onehuman.ai/measurements.

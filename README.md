@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/onehumanai"><img alt="npm" src="https://img.shields.io/npm/v/onehumanai?color=3ddc84&label=npm"></a>
-  <a href="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/OneHumanAI/onehumanai/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/OneHumanAI/onehuman/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/OneHumanAI/onehuman/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="Apache-2.0 SDK, BUSL-1.1 engine" src="https://img.shields.io/badge/license-Apache--2.0%20SDK%20%C2%B7%20BUSL--1.1%20engine-blue"></a>
 </p>
 <p align="center">
@@ -163,7 +163,7 @@ Want to see what agents already do in your product? Ask for the **[free 30 day a
 2. Open the same page with an AI agent (Claude in Chrome, ChatGPT agent, Comet) and ask it for the customer list or an export.
 3. Watch the private fields get hidden and the export held for a passkey, while a person's own clicks still go through.
 
-Found a way to fool it? [Open an issue](https://github.com/OneHumanAI/onehumanai/issues). Hard criticism is welcome.
+Found a way to fool it? [Open an issue](https://github.com/OneHumanAI/onehuman/issues). Hard criticism is welcome.
 
 ## How it decides
 

@@ -11,7 +11,7 @@ Every new source file starts with its licence: `// SPDX-License-Identifier: Apac
 ## Setup
 
 ```bash
-git clone https://github.com/OneHumanAI/onehumanai.git
+git clone https://github.com/OneHumanAI/onehuman.git
 cd onehumanai
 npm install
 npm run check      # tsc + tests — must pass before a PR

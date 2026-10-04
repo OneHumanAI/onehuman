@@ -29,7 +29,7 @@ fastapi = ["fastapi>=0.100"]
 [project.urls]
 Homepage = "https://onehuman.ai"
 Documentation = "https://onehuman.ai/docs"
-Source = "https://github.com/OneHumanAI/onehumanai"
+Source = "https://github.com/OneHumanAI/onehuman"
 
 [tool.setuptools]
 packages = ["onehumanai"]

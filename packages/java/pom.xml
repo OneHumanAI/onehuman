@@ -9,8 +9,8 @@
   <url>https://onehuman.ai</url>
   <licenses><license><name>Apache-2.0</name><url>https://www.apache.org/licenses/LICENSE-2.0</url></license></licenses>
   <scm>
-    <url>https://github.com/OneHumanAI/onehumanai</url>
-    <connection>scm:git:https://github.com/OneHumanAI/onehumanai.git</connection>
+    <url>https://github.com/OneHumanAI/onehuman</url>
+    <connection>scm:git:https://github.com/OneHumanAI/onehuman.git</connection>
   </scm>
   <organization><name>OneHuman Inc.</name><url>https://onehuman.ai</url></organization>
   <developers><developer><name>OneHuman Inc.</name><email>security@onehuman.ai</email><url>https://onehuman.ai</url></developer></developers>

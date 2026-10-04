@@ -365,4 +365,4 @@ curl -H "Authorization: Bearer $ONEHUMAN_ADMIN_KEY" -H 'Content-Type: applicatio
 
 In `onehumanai` (this package) the browser SDK, the Express middleware, the CLI and the proof verifier are **Apache 2.0**. The engine they run on (`dist/engine.js`) is **Business Source License 1.1** with a production-use grant: you may run it in production, at any scale, to protect your own applications and the services you provide to your customers. The only use not granted is offering OneHuman itself to third parties as a competing hosted or embedded product. Each engine version converts to Apache 2.0 four years after release. Versions before 0.4.0 were MIT.
 
-Live demo: https://onehuman.ai · Source and docs: https://github.com/OneHumanAI/onehumanai (SDK and middleware Apache-2.0; engine BUSL-1.1 — production use granted) · https://onehuman.ai/docs · https://onehuman.ai/measurements.
+Live demo: https://onehuman.ai · Source and docs: https://github.com/OneHumanAI/onehuman (SDK and middleware Apache-2.0; engine BUSL-1.1 — production use granted) · https://onehuman.ai/docs · https://onehuman.ai/measurements.
