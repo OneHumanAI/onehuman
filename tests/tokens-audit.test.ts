@@ -5,6 +5,7 @@ import { issueToken, verifyToken } from '../server/tokens.ts';
 import { Store } from '../server/db.ts';
 import { appendDecision, verifyChain } from '../server/audit.ts';
 import type { DecisionRow } from '../server/db.ts';
+import { getRow, setRow } from './rows.ts';
 
 const secret = Buffer.from('test-secret-test-secret-test-secret');
 
@@ -32,10 +33,9 @@ test('audit chain verifies and detects tampering', async () => {
   const session = (await store.createSession(room, 'unlabelled', null))!;
   for (let i = 1; i <= 5; i++) await appendDecision(store, decision(room, session, i));
   assert.deepEqual(await verifyChain(store, room), { ok: true, checked: 5, brokenAt: null });
-  const row = (await store.exec('SELECT body FROM decisions WHERE id = ?', ['d3'])).rows[0] as { body: string };
-  const body = JSON.parse(row.body);
+  const body = JSON.parse(String((await getRow(store, 'decisions', 'd3'))!.body));
   body.decision = 'block';
-  await store.exec('UPDATE decisions SET body = ? WHERE id = ?', [JSON.stringify(body), 'd3']);
+  await setRow(store, 'decisions', 'd3', { body: JSON.stringify(body) });
   const r = await verifyChain(store, room);
   assert.equal(r.ok, false);
   assert.equal(r.brokenAt, 3);

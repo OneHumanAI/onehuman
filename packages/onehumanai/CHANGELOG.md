@@ -8,6 +8,7 @@
 - **`init` says what else to do:** mark on-screen values `data-oh-sensitive="full"`, and use a test account's cookie for `verify --attach`; its mask example names one of your routes.
 - **`verify` explains a 401** (the route needs a signed-in user: `--cookie`) even when OneHuman decided before the app's login check.
 - **`npx onehumanai --help`** lists every command and option; an unknown command says so.
+- **`init` says what the API key is for:** your dashboard and the free 30-day AI agent report.
 
 ## 0.7.3
 - **Fixed: an agent seen before the login was known was missed on the first protected request.** The page script reports from the first page, often before the app's login middleware has run; that evidence now moves to the login's session before its first decision.

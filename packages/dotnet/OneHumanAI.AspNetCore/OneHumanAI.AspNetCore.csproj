@@ -5,7 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <PackageId>OneHumanAI.AspNetCore</PackageId>
     <Version>0.1.0</Version>
-    <Authors>OneHuman</Authors>
+    <Authors>OneHuman Inc.</Authors>
+    <Company>OneHuman Inc.</Company>
+    <Copyright>© 2026 OneHuman Inc.</Copyright>
     <Description>Access control for the AI agents your customers log in with, for ASP.NET Core: hide private data, ask the account owner's passkey for risky actions, sign every decision. Talks to the local OneHuman sidecar (npx onehumanai sidecar).</Description>
     <PackageTags>ai-agent;agent-detection;security;aspnetcore;passkey;webauthn</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>

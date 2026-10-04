@@ -54,6 +54,8 @@ export type OneHumanOptions = {
   db?: string;
   /** an already open storage client (instead of `db`): for a host that runs OneHuman next to its own database connection */
   client?: SqlClient;
+  /** an already open store (instead of `db` and `client`): a host whose storage is not SQL brings its own */
+  store?: Store;
   /** where the SDK and its API live (default '/onehuman') */
   basePath?: string;
   /**
@@ -245,7 +247,7 @@ export async function onehuman(opts: OneHumanOptions) {
   const sessionHash = (id: string) => createHash('sha256').update(apiKey).update('\0').update(id).digest('hex').slice(0, 16);
 
   // one room holds every visitor of this app: limits are per session and by age, never a cap on visitors
-  const store = await Store.open(opts.client ?? await openClient(opts.db ?? 'sqlite:./onehuman.db'), { limits: SERVER_LIMITS });
+  const store = opts.store ?? await Store.open(opts.client ?? await openClient(opts.db ?? 'sqlite:./onehuman.db'), { limits: SERVER_LIMITS });
   const model = await loadModel();
   attachModel(model ? { predict: (f) => predict(model, f), humanAbove: model.humanAbove, syntheticBelow: model.syntheticBelow } : null);
   const engine = new OneHuman({ store, secret, sessionCookie: cookieName, proofEpoch: opts.proofEpoch, retiredProofKeys: opts.retiredProofKeys });

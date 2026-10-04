@@ -10,6 +10,7 @@ import { createHash } from 'node:crypto';
 import { Store } from '../server/db.ts';
 import { appendDecision, appendDecisionOnce, canonical, hashDecision, verifyChain } from '../server/audit.ts';
 import type { DecisionRow } from '../server/db.ts';
+import { getRow, setRow } from './rows.ts';
 
 async function setup() {
   const store = await Store.open();
@@ -49,9 +50,8 @@ test('the hash covers the evidence: editing a nested reason or metric breaks the
     const first = await appendDecision(store, body());
     await appendDecision(store, body());
     assert.ok(first.hash.startsWith('v2:'));
-    const raw = (await store.exec('SELECT body FROM decisions WHERE id = ?', [first.id])).rows[0]!.body as string;
-    const b = JSON.parse(raw); edit(b);
-    await store.exec('UPDATE decisions SET body = ? WHERE id = ?', [JSON.stringify(b), first.id]);
+    const b = JSON.parse(String((await getRow(store, 'decisions', first.id))!.body)); edit(b);
+    await setRow(store, 'decisions', first.id, { body: JSON.stringify(b) });
     assert.deepEqual(await verifyChain(store, room), { ok: false, checked: 2, brokenAt: 1 });
   }
 });

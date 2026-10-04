@@ -9,7 +9,7 @@ description = "Access control for the AI agents your customers log in with (Clau
 readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"
-authors = [{ name = "OneHuman", email = "security@onehuman.ai" }]
+authors = [{ name = "OneHuman Inc.", email = "security@onehuman.ai" }]
 keywords = ["ai-agent", "agent-detection", "ai-security", "bot-detection", "flask", "django", "fastapi", "passkey", "webauthn", "claude-in-chrome", "chatgpt-agent"]
 classifiers = [
   "Programming Language :: Python :: 3",

@@ -177,7 +177,7 @@ export async function runInit(dir: string, flags: { yes: boolean; install: boole
   let apiKey = process.env.ONEHUMAN_API_KEY ?? '';
   if (!apiKey) {
     for (;;) {
-      apiKey = await text('Your API key from onehuman.ai/portal, to see all of this there (press Enter to skip):');
+      apiKey = await text('Your API key from onehuman.ai/portal, for your dashboard and the free 30-day AI agent report (press Enter to skip):');
       if (!apiKey || /^oh_live_[a-f0-9]{40}$/.test(apiKey)) break;
       say(yellow('  That is not a OneHuman key: it starts with oh_live_ and has 40 more characters. Press Enter to skip.'));
     }

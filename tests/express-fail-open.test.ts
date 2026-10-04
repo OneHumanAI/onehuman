@@ -9,6 +9,7 @@ import express from 'express';
 import type { AddressInfo } from 'node:net';
 import { onehuman } from '../integrations/express/index.ts';
 import { Store, SERVER_LIMITS } from '../server/db.ts';
+import { countRows } from './rows.ts';
 
 const rule = { resource: 'balance.read', title: 'Balance', onAgent: 'block', onArtifact: 'mask', onUnknown: 'step_up', onHumanLike: 'allow', actOn: ['verified', 'strong', 'control', 'behavioral'], minScore: 65 };
 const secret = 'test-secret-test-secret-test-secret-fail';
@@ -84,7 +85,7 @@ test("the customer's server has no visitor cap and keeps events per session, not
   const [a, b] = [await store.createSession(room, 'unlabelled', null), await store.createSession(room, 'unlabelled', null)];
   for (let i = 0; i < 320; i++) await store.addEvent(room, a!, 'signal', { i });
   await store.addEvent(room, b!, 'signal', { only: true });
-  const count = async (s: string) => Number((await store.sql.execute('SELECT COUNT(*) AS n FROM events WHERE session = ?', [s])).rows[0]!.n);
+  const count = (s: string) => countRows(store, 'events', 'session', s);
   assert.equal(await count(a!), SERVER_LIMITS.eventsPerSession, 'a busy session keeps its newest events');
   assert.equal(await count(b!), 1, "another visitor's events are untouched");
   store.close();

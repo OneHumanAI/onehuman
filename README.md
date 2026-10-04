@@ -34,7 +34,7 @@
 
 B2B SaaS teams whose customers now use AI agents inside their accounts. If your product holds customer lists, invoices, settings or exports, this is for you.
 
-OneHuman is **not** workforce AI security. It does not govern the agents your own employees run. It governs the agents your **customers** bring into your product.
+OneHuman is **not** workforce AI security. It does not control the agents your own employees run. It controls the agents your **customers** bring into your product.
 
 ## Why this?
 
@@ -191,7 +191,7 @@ flowchart LR
 | Workforce AI security (Noma) | The agents your employees run | Inside your company |
 | **OneHuman** | What your customers' agents may see and do | Inside the customer's session, on your own server |
 
-Noma governs the agents your employees use. OneHuman governs the agents your customers bring. Full scored table with 10 companies: [onehuman.ai/compare](https://onehuman.ai/compare) (marked from public documentation as of September 2026).
+Noma secures the agents your employees use. OneHuman controls the agents your customers bring. Full scored table with 10 companies: [onehuman.ai/compare](https://onehuman.ai/compare) (marked from public documentation as of September 2026).
 
 ## Support
 
@@ -214,11 +214,11 @@ A program written to fake a person's clicks for one site can pass the click chec
 - [x] Signed decision proofs and an offline verifier
 - [x] Portal: activity, rules in plain words, 30-day report
 - [x] One-command setup (`npx onehumanai init`)
-- [ ] Customers mark a decision right or wrong in the portal; the false-stop rate becomes a live number
-- [ ] Hosted agent-signature updates for self-hosted engines
+- [x] Sidecar and adapters for Python, .NET and Java backends
+- [x] Customers mark a decision right or wrong in the portal; the false-stop rate is a live number
+- [x] Signed agent-signature updates for self-hosted engines (checked every 6 hours)
 - [ ] Fastify and Next.js adapters
 - [ ] Touch layer for mobile browsers
-- [x] Sidecar and adapters for Python, .NET and Java backends
 
 ## Repository
 

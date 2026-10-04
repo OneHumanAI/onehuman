@@ -3,13 +3,13 @@ License text copyright (c) 2020 MariaDB Corporation Ab, All Rights Reserved.
 
 Parameters
 
-Licensor:             Arif Babayev
+Licensor:             OneHuman Inc.
 Licensed Work:        OneHuman engine, version 0.4.0 or later: the
                       engine in the onehumanai npm package (dist/engine.js
                       and dist/kinematics-model.json) and, in the OneHuman source
                       repository, every file not listed as Apache-2.0 in the
                       repository's LICENSE file. The Licensed Work is (c) 2026
-                      Arif Babayev.
+                      OneHuman Inc..
 Additional Use Grant: You may make production use of the Licensed Work, provided
                       Your use does not include offering the Licensed Work to third
                       parties on a hosted or embedded basis in order to compete with

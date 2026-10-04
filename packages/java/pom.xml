@@ -12,7 +12,8 @@
     <url>https://github.com/OneHumanAI/onehumanai</url>
     <connection>scm:git:https://github.com/OneHumanAI/onehumanai.git</connection>
   </scm>
-  <developers><developer><name>OneHuman</name><email>security@onehuman.ai</email><url>https://onehuman.ai</url></developer></developers>
+  <organization><name>OneHuman Inc.</name><url>https://onehuman.ai</url></organization>
+  <developers><developer><name>OneHuman Inc.</name><email>security@onehuman.ai</email><url>https://onehuman.ai</url></developer></developers>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
