@@ -18,4 +18,4 @@ npx onehumanai verify http://localhost:3000 /api/balance
 
 **What it does not do.** API keys and server-to-server calls (no browser, nothing to see). Native mobile apps. Go, Ruby and PHP backends (Python, .NET and Java run through `npx onehumanai sidecar`). It does not identify people. A script written for one site can pass the behaviour check — that is why critical actions should ask for a passkey.
 
-**More.** How the numbers were measured: https://onehuman.ai/measurements · What stays and what leaves: https://onehuman.ai/trust · Full docs: https://onehuman.ai/docs · Security: security@onehuman.ai
+**More.** How the numbers were measured: https://onehuman.ai/measurements · What stays and what leaves: https://onehuman.ai/trust · Full docs: https://onehuman.ai/docs · Security: arif@onehuman.ai

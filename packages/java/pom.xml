@@ -13,11 +13,11 @@
     <connection>scm:git:https://github.com/OneHumanAI/onehuman.git</connection>
   </scm>
   <organization><name>OneHuman Inc.</name><url>https://onehuman.ai</url></organization>
-  <developers><developer><name>OneHuman Inc.</name><email>security@onehuman.ai</email><url>https://onehuman.ai</url></developer></developers>
+  <developers><developer><name>OneHuman Inc.</name><email>arif@onehuman.ai</email><url>https://onehuman.ai</url></developer></developers>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>6.1.14</spring.version>
+    <spring.version>6.2.19</spring.version>
   </properties>
   <dependencies>
     <dependency><groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId><version>6.0.0</version><scope>provided</scope></dependency>

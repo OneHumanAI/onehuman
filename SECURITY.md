@@ -2,7 +2,10 @@
 
 ## Reporting a vulnerability
 
-Email **security@onehuman.ai**. Please do not open a public GitHub issue for a security problem.
+Use either private channel, and please do not open a public GitHub issue for a security problem:
+
+- GitHub: **[Report a vulnerability](https://github.com/OneHumanAI/onehuman/security/advisories/new)** (Security tab of this repository)
+- E-mail: **arif@onehuman.ai**
 
 Include what you found, how to reproduce it, the affected version (`npm ls onehumanai`, or the version in `GET /onehuman/health`), and the impact as you see it. A proof of concept helps; so does a trajectory sample for a detection bypass.
 

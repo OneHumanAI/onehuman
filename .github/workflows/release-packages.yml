@@ -74,7 +74,7 @@ jobs:
       - name: Signing key for this release, published and visible on the keyserver before the upload
         run: |
           export GNUPGHOME="$(mktemp -d)"; echo "GNUPGHOME=$GNUPGHOME" >> "$GITHUB_ENV"
-          gpg --batch --passphrase '' --quick-gen-key "OneHuman release <security@onehuman.ai>" ed25519 sign 30d
+          gpg --batch --passphrase '' --quick-gen-key "OneHuman release <arif@onehuman.ai>" ed25519 sign 30d
           FPR=$(gpg --list-keys --with-colons | awk -F: '/^fpr/ {print $10; exit}')
           gpg --armor --export "$FPR" > pub.asc
           curl -fsS --data-urlencode "keytext@pub.asc" https://keyserver.ubuntu.com/pks/add >/dev/null
