@@ -11,6 +11,7 @@
   <a href="https://www.npmjs.com/package/onehumanai"><img alt="npm" src="https://img.shields.io/npm/v/onehumanai?color=3ddc84&label=npm"></a>
   <a href="https://github.com/OneHumanAI/onehuman/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/OneHumanAI/onehuman/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="Apache-2.0 SDK, BUSL-1.1 engine" src="https://img.shields.io/badge/license-Apache--2.0%20SDK%20%C2%B7%20BUSL--1.1%20engine-blue"></a>
+  <a href="https://discord.gg/9QX9jTwBq"><img alt="Discord" src="https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white"></a>
 </p>
 <p align="center">
   <a href="https://onehuman.ai/crm"><img alt="Try the live demo" src="https://img.shields.io/badge/%E2%96%B6%20%20Try%20the%20live%20demo-0a0a0b?style=for-the-badge&labelColor=0a0a0b&color=3ddc84" height="40"></a>
@@ -244,7 +245,7 @@ npm run build:package  # packages/onehumanai/dist
 
 ## Contributing
 
-Issues and pull requests are welcome, see [`CONTRIBUTING.md`](CONTRIBUTING.md). Security reports: [`SECURITY.md`](SECURITY.md). If OneHuman is useful to you, a ⭐ helps other developers find it.
+Issues and pull requests are welcome, see [`CONTRIBUTING.md`](CONTRIBUTING.md). Security reports: [`SECURITY.md`](SECURITY.md). Questions and ideas: [join our Discord](https://discord.gg/9QX9jTwBq). If OneHuman is useful to you, a ⭐ helps other developers find it.
 
 ## License
 
