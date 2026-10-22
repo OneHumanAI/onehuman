@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Təlim mühiti — OneHuman</title>
+<meta name="description" content="21 real bank jesti. Hər klik trayektoriyası ilə yazılır; sonda mühərrik addım-addım deyir: səni agent sayardımı.">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/lab.css">
+<script src="/sdk/onehuman.js" data-endpoint="/api/v1/sandbox/noop" data-zone="[data-oh-zone]" data-seal="off"></script>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="lab">
+  <div class="top">
+    <a class="brand" href="/"><svg class="logo" viewBox="0 0 436.59 72" fill="currentColor" role="img" aria-label="OneHuman"><path d="M72 72L53.6 40.31C49.22 45.04 42.95 48 36 48C29.05 48 22.78 45.04 18.4 40.31L0 72L72 72"/><path d="M53.6 40.31C57.57 36.03 60 30.3 60 24C60 10.75 49.25 0 36 0C22.74 0 12 10.75 12 24C12 30.3 14.43 36.03 18.4 40.31L36 10L53.6 40.31"/><path d="M101.36 36C101.36 39.49 102.34 42.2 104.3 44.14C106.27 46.07 109.04 47.04 112.61 47.04C116.13 47.04 118.87 46.07 120.85 44.14C122.83 42.2 123.82 39.49 123.82 36C123.82 32.48 122.84 29.76 120.88 27.84C118.91 25.92 116.16 24.96 112.61 24.96C109.07 24.96 106.31 25.93 104.33 27.86C102.35 29.8 101.36 32.51 101.36 36ZM92.59 36C92.59 32.29 93.4 29.09 95.03 26.4C96.66 23.71 98.98 21.64 101.98 20.18C104.98 18.73 108.54 18 112.66 18C116.78 18 120.33 18.73 123.3 20.18C126.27 21.64 128.56 23.71 130.17 26.4C131.78 29.09 132.59 32.29 132.59 36C132.59 39.71 131.77 42.91 130.15 45.6C128.52 48.29 126.2 50.36 123.2 51.82C120.2 53.27 116.64 54 112.52 54C108.43 54 104.89 53.27 101.91 51.82C98.92 50.36 96.62 48.29 95.01 45.6C93.4 42.91 92.59 39.71 92.59 36"/><path d="M140.16 18.86L147.77 18.86L166.79 41.76L166.79 18.86L174.84 18.86L174.84 53.14L167.22 53.14L148.21 30.19L148.21 53.14L140.16 53.14L140.16 18.86"/><path d="M184.04 18.86L213.07 18.86L213.07 25.3L192.37 25.3L192.37 32.45L212.06 32.45L212.06 38.83L192.37 38.83L192.37 46.7L214.17 46.7L213.26 53.14L184.04 53.14L184.04 18.86"/><path d="M247.46 39.07L229.74 39.07L229.74 53.14L221.31 53.14L221.31 18.86L229.74 18.86L229.74 31.82L247.46 31.82L247.46 18.86L255.89 18.86L255.89 53.14L247.46 53.14L247.46 39.07"/><path d="M264.71 38.54L264.71 18.86L273.14 18.86L273.14 39.12C273.14 41.84 273.84 43.84 275.22 45.12C276.61 46.4 278.79 47.04 281.76 47.04C284.7 47.04 286.87 46.4 288.25 45.12C289.64 43.84 290.34 41.84 290.34 39.12L290.34 18.86L298.77 18.86L298.77 38.54C298.77 43.92 297.32 47.84 294.41 50.3C291.5 52.77 287.29 54 281.76 54C276.21 54 271.97 52.77 269.07 50.3C266.16 47.84 264.71 43.92 264.71 38.54"/><path d="M307.58 18.86L317.31 18.86L328.95 44.06L340.54 18.86L350.03 18.86L350.03 53.14L342.17 53.14L342.17 30.48L331.92 53.14L325.55 53.14L315.3 30.53L315.3 53.14L307.58 53.14L307.58 18.86"/><path d="M375.85 25.63L370.05 39.41L381.69 39.41L375.85 25.63ZM364.4 53.14L355.73 53.14L371.15 18.86L380.83 18.86L396.25 53.14L387.34 53.14L384.18 45.84L367.42 45.84L364.4 53.14"/><path d="M401.91 18.86L409.52 18.86L428.54 41.76L428.54 18.86L436.59 18.86L436.59 53.14L428.97 53.14L409.95 30.19L409.95 53.14L401.91 53.14L401.91 18.86"/></svg> <small>· təlim mühiti</small></a>
+    <span class="pill" id="who-pill"><i></i><span>Kim işləyir?</span></span>
+  </div>
+  <h1>Əl ilə <span class="accent">agent</span> arasındakı fərq — ölçülür.</h1>
+  <p class="lead">Real bank səhifəsində rast gəlinən 21 hərəkət (~6 dəqiqə). Yalnız yazılanı et — təbii, tələsmədən, öz vərdişinlə. Hər klikin kursor yolu, basma müddəti və konteksti yazılır; sonda real qərar mühərriki bütün dövrəni addım-addım işlədib deyir: <b>səni agent sayardımı, niyə.</b></p>
+
+  <div class="who" id="who">
+    <button id="as-human"><b>Mən insanam</b><small>siçan, trackpad və ya toxunuşla özün edəcəksən · sonda 21 addımın hər biri üçün qərar</small></button>
+    <button id="as-agent" class="agent-btn"><b>Mən AI agentəm</b><small>bu düyməni agent kliklədikdə seçilir · aşağıdakı promptu agentinə ver</small></button>
+  </div>
+
+  <div id="run" hidden>
+    <div class="meta">
+      <span>Mənbə:</span>
+      <select id="source">
+        <option value="chrome-mouse">Chrome · siçan</option>
+        <option value="chrome-trackpad">Chrome · trackpad</option>
+        <option value="safari">Safari</option>
+        <option value="firefox">Firefox</option>
+        <option value="windows-mouse">Windows · siçan</option>
+        <option value="iphone-safari">iPhone · Safari</option>
+        <option value="iphone-chrome">iPhone · Chrome</option>
+        <option value="android-touch">Android · toxunuş</option>
+        <option value="safari-trackpad">Mac · Safari · trackpad</option>
+        <option value="touch">Toxunuş ekranı (digər)</option>
+        <option value="claude-pane-human">Claude tətbiqinin brauzeri · insan</option>
+        <option value="other">Digər</option>
+      </select>
+      <span class="progress" id="progress"></span>
+      <span class="ring-wrap"><svg class="progress-ring" viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" id="ring" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg><span class="progress" id="ring-label">0%</span></span>
+    </div>
+    <div class="phase" id="phase"></div>
+    <div class="stepper" id="stepper"></div>
+    <div class="task" id="task"><div class="num" id="t-num"></div><h2 id="t-title"></h2><p id="t-text"></p></div>
+    <div class="stage scene" id="stage" data-oh-zone>
+      <div class="scene-bar"><span></span><span></span><span></span><em id="scene-url">bank.example.com/login</em><b class="scene-rec"><i></i>yazılır</b></div>
+      <div class="scene-grid">
+        <aside class="scene-side" id="scene-side"><div class="scene-logo">NB</div><i title="Giriş"></i><i title="Hesab"></i><i title="Ödəniş"></i><i title="Sənəd və fasilə"></i></aside>
+        <div class="scene-main">
+          <div class="scene-head"><div><b id="scene-title">Daxil ol</b><small id="scene-sub">Northstar Bank · şəxsi hesab</small></div><span class="scene-guard"><i></i>Sessiya qorunur</span></div>
+          <div class="scene-body" id="stage-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="hud" id="hud" hidden>
+      <header class="hud-top">
+        <span class="hud-title">Canlı mühərrik</span>
+        <span class="hud-sub" id="hud-sub">son klikin fizikası — serverdən</span>
+        <span class="hud-tally" id="hud-tally"></span>
+      </header>
+      <div class="hud-body">
+        <div class="hud-trace">
+          <canvas id="trace" width="620" height="200"></canvas>
+          <div class="hud-verdict" id="hud-verdict"><span class="res unknown">gözlənilir</span></div>
+        </div>
+        <div class="hud-meters" id="hud-meters"></div>
+      </div>
+      <div class="hud-flags" id="hud-flags"></div>
+      <div class="spark" id="spark"></div>
+    </section>
+    <div class="results" id="results" hidden></div>
+  </div>
+
+  <div class="panel">
+    <h3>AI agent üçün prompt</h3>
+    <p>Agentini seç, promptu kopyala, ona yapışdır. Agent işləyərkən siçana toxunma — ilişsə, qoy ilişsin; ilişmənin özü də datadır.</p>
+    <div class="tabs" id="tabs">
+      <button class="on" data-agent="claude">Claude in Chrome</button>
+      <button data-agent="codex">Codex</button>
+      <button data-agent="comet">Comet / Atlas</button>
+      <button data-agent="generic">Digər agent</button>
+    </div>
+    <textarea id="agent-prompt" readonly></textarea>
+    <div class="actions"><button class="primary" id="copy-prompt">Promptu kopyala</button> <button class="ghost" id="restart">Yenidən başla</button> <a class="ghost" href="/sandbox" style="display:inline-flex;align-items:center;padding:10px 16px;border:1px solid var(--line);border-radius:12px">Qısa variant: sandbox →</a></div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+  <div class="foot"><a href="/">← Ana səhifə</a><a href="/docs/EVAL.md">Qiymətləndirmə hesabatı</a><a href="/docs/HESABAT.md">Tədqiqat jurnalı</a><span>Bütün məlumat sintetikdir · trayektoriyalar yalnız metadata kimi saxlanır</span></div>
+</div>
+<script src="/lab-hud.js"></script>
+<script src="/training.js"></script>
+</body>
+</html>

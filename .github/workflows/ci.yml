@@ -1,0 +1,78 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]   # README promises Node 22.13+; the package runs on both
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: node scripts/build-package.mjs
+      - name: Package installs and serves the SDK
+        run: |
+          mkdir -p /tmp/tgz && (cd packages/onehumanai && npm pack --pack-destination /tmp/tgz >/dev/null)
+          mkdir -p /tmp/smoke && cd /tmp/smoke && npm init -y >/dev/null
+          npm i /tmp/tgz/*.tgz express >/dev/null
+          npx onehumanai secret >/dev/null
+          node -e "import('onehumanai').then(async ({onehuman}) => { const oh = await onehuman({ secret: 'ci-secret-ci-secret-ci-secret-ci-secret', db: 'memory', policy: { version: 'ci', enforcement: 'observe', rules: [{ resource: 'x.read', title: 'x', onAgent: 'block', onArtifact: 'mask', onUnknown: 'allow', onHumanLike: 'allow', actOn: ['verified','strong','control','behavioral'], minScore: 65 }] } }); console.log('ok', oh.basePath); oh.close(); })"
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install flask django fastapi httpx
+      - name: Python adapters against a real sidecar
+        run: python -m unittest discover -s packages/python/tests -v
+        env:
+          ONEHUMAN_REPO: ${{ github.workspace }}
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - name: ASP.NET Core adapter against a real sidecar
+        run: node scripts/with-sidecar.mjs -- dotnet run --project packages/dotnet/tests/Smoke
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Servlet filter and Spring MVC interceptor against a real sidecar
+        run: node scripts/with-sidecar.mjs -- mvn -B -f packages/java/pom.xml test
+

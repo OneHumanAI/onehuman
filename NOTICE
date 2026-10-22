@@ -1,0 +1,9 @@
+OneHuman
+Copyright 2026 OneHuman Inc.
+
+This product includes software developed by OneHuman Inc. (https://onehuman.ai).
+
+The browser SDK, the Express/Connect middleware, the command-line tool and the
+decision-proof verifier are licensed under the Apache License, Version 2.0.
+They run on the OneHuman engine, which is licensed separately under the
+Business Source License 1.1 (production use with a OneHuman license: a free API key or a license file; see LICENSE-BSL).

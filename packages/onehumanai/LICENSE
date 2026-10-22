@@ -1,0 +1,24 @@
+The onehumanai package is licensed in two parts. Copyright (c) 2026 OneHuman Inc..
+
+1. Apache License 2.0 — full text in LICENSE-APACHE.
+   What you link into your own code:
+
+     dist/express.js        the Express/Connect middleware
+     dist/cli.js            the command line (npx onehumanai …)
+     sdk/onehuman.js        the browser SDK
+     dist/types/integrations/**
+
+2. Business Source License 1.1 — full text and parameters in LICENSE-BSL.
+   The engine the middleware runs on:
+
+     dist/engine.js         detection, policy, audit log, decision proofs
+     dist/kinematics-model.json
+     dist/types/server/**
+
+   The Additional Use Grant permits production use, including protecting your own
+   applications and the services you provide to your customers. It does not permit
+   offering OneHuman to third parties as a competing hosted or embedded product.
+   Four years after each version is published it converts to Apache 2.0
+   (or, at your option, GPL 2.0 or later).
+
+Each file names its licence in its first line.

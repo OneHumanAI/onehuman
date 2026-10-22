@@ -1,0 +1,319 @@
+{
+ "arrival": {
+  "signature": {
+   "status": "absent",
+   "reason": "Sorğuda imza yoxdur; bu, insan sübutu deyil.",
+   "operator": null,
+   "present": {
+    "signature": false,
+    "signatureInput": false,
+    "signatureAgent": false
+   }
+  },
+  "secFetch": {
+   "site": "none",
+   "mode": "navigate",
+   "dest": "document",
+   "user": null
+  },
+  "uaMajor": 604,
+  "environment": {
+   "agentAppToken": null,
+   "clientHints": false
+  },
+  "checkedMs": 0
+ },
+ "interactions": [
+  {
+   "atMs": 3064,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 33,
+    "moves": 4,
+    "path": 8,
+    "travelMs": 33,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [
+     [
+      -806,
+      320,
+      587
+     ],
+     [
+      -806,
+      320,
+      587
+     ],
+     [
+      -789,
+      321,
+      582
+     ],
+     [
+      -773,
+      322,
+      579
+     ]
+    ],
+    "downMs": -33,
+    "target": {
+     "w": 137,
+     "h": 42,
+     "dx": 19.8,
+     "dy": 10
+    },
+    "coalesced": 12,
+    "at": [
+     122,
+     344
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 4298,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 45,
+    "moves": 0,
+    "path": 0,
+    "travelMs": 0,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [],
+    "downMs": -45,
+    "target": {
+     "w": 137,
+     "h": 42,
+     "dx": 22.8,
+     "dy": 7
+    },
+    "coalesced": 0,
+    "at": [
+     125,
+     341
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 5099,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 29,
+    "moves": 0,
+    "path": 0,
+    "travelMs": 0,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [],
+    "downMs": -29,
+    "target": {
+     "w": 227,
+     "h": 42,
+     "dx": 43.8,
+     "dy": 1
+    },
+    "coalesced": 0,
+    "at": [
+     337,
+     335
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 8819,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 15,
+    "moves": 0,
+    "path": 0,
+    "travelMs": 0,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [],
+    "downMs": -15,
+    "target": {
+     "w": 138,
+     "h": 42,
+     "dx": 54.8,
+     "dy": 8
+    },
+    "coalesced": 0,
+    "at": [
+     157,
+     342
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 10015,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 28,
+    "moves": 0,
+    "path": 0,
+    "travelMs": 0,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [],
+    "downMs": -28,
+    "target": {
+     "w": 138,
+     "h": 42,
+     "dx": 38.8,
+     "dy": 8
+    },
+    "coalesced": 0,
+    "at": [
+     141,
+     342
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 11631,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 45,
+    "moves": 9,
+    "path": 159,
+    "travelMs": 333,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [
+     [
+      -1136,
+      244,
+      593
+     ],
+     [
+      -1136,
+      244,
+      593
+     ],
+     [
+      -1119,
+      244,
+      588
+     ],
+     [
+      -1119,
+      245,
+      563
+     ],
+     [
+      -835,
+      303,
+      456
+     ],
+     [
+      -835,
+      303,
+      456
+     ],
+     [
+      -819,
+      305,
+      454
+     ],
+     [
+      -803,
+      305,
+      453
+     ],
+     [
+      -803,
+      307,
+      451
+     ]
+    ],
+    "downMs": -45,
+    "target": {
+     "w": 69,
+     "h": 42,
+     "dx": 13.2,
+     "dy": 5.5
+    },
+    "coalesced": 23,
+    "at": [
+     81,
+     408
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  },
+  {
+   "atMs": 13400,
+   "webdriver": false,
+   "click": {
+    "trusted": true,
+    "pointer": "mouse",
+    "detail": 1,
+    "holdMs": 63,
+    "moves": 0,
+    "path": 0,
+    "travelMs": 0,
+    "pressure": 0,
+    "hidden": false,
+    "traj": [],
+    "downMs": -63,
+    "target": {
+     "w": 68,
+     "h": 41,
+     "dx": 18.2,
+     "dy": -4.5
+    },
+    "coalesced": 0,
+    "at": [
+     86,
+     398
+    ]
+   },
+   "keys": 0,
+   "keyIntervals": [],
+   "inputEvents": 0,
+   "paste": false
+  }
+ ]
+}

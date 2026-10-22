@@ -1,0 +1,36 @@
+# OneHuman
+
+> OneHuman controls the AI agents your customers bring into your web app. It is a Node.js middleware and browser SDK that notices when an AI agent (Claude in Chrome, ChatGPT agent, OpenAI Codex, Perplexity Comet, Playwright or Puppeteer) is operating a customer's signed-in session in a web app, and lets each endpoint allow the request, hide private fields, wait for the account owner's passkey approval, or keep it closed. Every decision is signed (Ed25519) on the customer's own server, so the company can prove afterwards which actions a human approved. Install with `npx onehumanai init`.
+
+Key facts:
+- Category: control of customer-brought AI agents inside signed-in web sessions (not edge bot management, not CAPTCHA, not workforce AI security: that controls the agents a company's own employees run).
+- Who uses it: product, fraud and engineering teams at banks, fintech and SaaS companies whose users bring AI agents into their accounts. Not the CISO's tool for monitoring employees' AI use; the end user (the account owner) sees and approves what their agent does.
+- Works at the endpoint, after login: bot protection at the door does not see an agent that uses the customer's own browser, cookies and login.
+- Detection: traces agent tools leave in the page when they attach (before the agent's first action), a per-click check that tells a human hand from a program, and Web Bot Auth signatures.
+- Policy per resource: `allow`, `mask`, `step_up` (passkey / WebAuthn), `block`. Start in `observe` mode, then `enforce`.
+- Unclear evidence is "unknown", never treated as human.
+- Runs on your server (Node.js 22.13+, Express 4/5, Connect, Next.js custom server, node:http). Storage: SQLite or libSQL. No data leaves without an optional API key; then only decision metadata.
+- Own measurements (not an independent study): 2 of 397 human clicks from 22 browsers and devices read as a program; 2 of 824 agent clicks read as a person; Claude in Chrome marked 0.1 to 0.5 s after attaching.
+- Licence: SDK, middleware and CLI Apache 2.0; engine source-available under BUSL 1.1: production use with a OneHuman license (a free API key, or a license file for air-gapped deployments). npm package: `onehumanai`.
+
+## Start here
+- [Home](https://onehuman.ai/): what OneHuman does, live demo, FAQ
+- [Documentation](https://onehuman.ai/docs): install, concepts, policy reference, API
+- [Quickstart](https://github.com/OneHumanAI/onehuman/blob/main/QUICKSTART.md): three commands, one screen
+- [npm package](https://www.npmjs.com/package/onehumanai): `npm i onehumanai`, `npx onehumanai init`
+- The free API key (it licenses each deployment on its real domain): `npx onehumanai connect` shows a code and opens onehuman.ai; the person signs in or signs up, presses Connect, and the key lands in `.env`.
+
+## Evidence
+- [Free 30-day AI agent report](https://onehuman.ai/report): watch-only for 30 days, nothing blocked, then a report of which AI agents logged in as your customers and what they touched
+- [Agent scorecard](https://onehuman.ai/scorecard): which AI agents and bots were tested, what was caught, what gets through
+- [How we measured](https://onehuman.ai/measurements): dataset, method, and where the method fails
+- [AI agent permissions generator](https://onehuman.ai/ai-agent-permissions-generator): free, no signup; pick what an app holds and get allow, mask, ask-owner or block rules per action, plus a OneHuman policy file
+- [Trust and privacy](https://onehuman.ai/trust): what stays on your server, what never leaves, sub-processors
+
+## For AI coding agents
+- [Integration protocol (AGENTS.md)](https://github.com/OneHumanAI/onehuman/blob/main/AGENTS.md): analyse, propose, ask, implement, verify
+- [Full text for LLMs](https://onehuman.ai/llms-full.txt): everything above in one file
+
+## Optional
+- [Source code](https://github.com/OneHumanAI/onehuman)
+- [Security policy](https://github.com/OneHumanAI/onehuman/blob/main/SECURITY.md): arif@onehuman.ai

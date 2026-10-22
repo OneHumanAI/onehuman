@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": ".",
+    "outDir": "packages/onehumanai/dist/types"
+  },
+  "include": [
+    "integrations/express/index.ts",
+    "integrations/cli/index.ts",
+    "server/public.ts"
+  ]
+}

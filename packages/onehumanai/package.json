@@ -1,0 +1,93 @@
+{
+  "name": "onehumanai",
+  "version": "0.8.0",
+  "description": "Access control for the AI agents your customers log in with (Claude in Chrome, ChatGPT agent, Codex, Comet): hide private data from them, ask the account owner's passkey before anything risky, sign every decision on your own server. Node.js middleware + browser SDK. npx onehumanai init",
+  "type": "module",
+  "license": "(Apache-2.0 AND BUSL-1.1)",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/integrations/express/index.d.ts",
+      "default": "./dist/express.js"
+    },
+    "./sdk": "./sdk/onehuman.js",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/types/integrations/express/index.d.ts",
+  "bin": {
+    "onehumanai": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "sdk",
+    "README.md",
+    "QUICKSTART.md",
+    "AGENTS.md",
+    "llms.txt",
+    "CHANGELOG.md",
+    "LICENSE",
+    "LICENSE-APACHE",
+    "LICENSE-BSL",
+    "NOTICE"
+  ],
+  "keywords": [
+    "access-control",
+    "ai-agent",
+    "browser-agent",
+    "agentic-browser",
+    "express",
+    "middleware",
+    "session-security",
+    "claude",
+    "chatgpt-agent",
+    "web-bot-auth",
+    "data-exfiltration",
+    "pii-masking",
+    "webauthn",
+    "passkey",
+    "agentic-ai",
+    "agent-detection",
+    "ai-browser-agent",
+    "decision-proof",
+    "audit",
+    "onehuman",
+    "ai-agent-detection",
+    "detect-ai-agents",
+    "claude-in-chrome",
+    "chatgpt-atlas",
+    "perplexity-comet",
+    "openai-codex",
+    "playwright-detection",
+    "puppeteer-detection",
+    "human-verification",
+    "nextjs",
+    "nodejs",
+    "customer-agent-control",
+    "ai-agent-access-control",
+    "b2b-saas",
+    "fintech"
+  ],
+  "peerDependencies": {
+    "express": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {
+    "@libsql/client": "^0.18.0"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneHumanAI/onehuman.git"
+  },
+  "homepage": "https://onehuman.ai",
+  "bugs": {
+    "url": "https://github.com/OneHumanAI/onehuman/issues"
+  },
+  "author": "OneHuman Inc. <arif@onehuman.ai>"
+}

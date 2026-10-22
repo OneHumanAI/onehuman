@@ -1,0 +1,51 @@
+{
+  "version": "draft-1",
+  "enforcement": "observe",
+  "rules": [
+    {
+      "resource": "balance.read",
+      "title": "GET /api/balance",
+      "onAgent": "block",
+      "onArtifact": "mask",
+      "onUnknown": "allow",
+      "onHumanLike": "allow",
+      "actOn": [
+        "verified",
+        "strong",
+        "control",
+        "behavioral"
+      ],
+      "minScore": 65
+    },
+    {
+      "resource": "profile.read",
+      "title": "GET /api/profile",
+      "onAgent": "block",
+      "onArtifact": "mask",
+      "onUnknown": "allow",
+      "onHumanLike": "allow",
+      "actOn": [
+        "verified",
+        "strong",
+        "control",
+        "behavioral"
+      ],
+      "minScore": 65
+    },
+    {
+      "resource": "transfer.make",
+      "title": "POST /api/transfer",
+      "onAgent": "block",
+      "onArtifact": "step_up",
+      "onUnknown": "step_up",
+      "onHumanLike": "allow",
+      "actOn": [
+        "verified",
+        "strong",
+        "control",
+        "behavioral"
+      ],
+      "minScore": 65
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# onehuman.ai: public pages are open to search engines and AI assistants.
+# Demo apps, the portal and APIs are not content: each demo visit creates a private room.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /onehuman/
+Disallow: /portal
+Disallow: /ops
+Disallow: /bank
+Disallow: /crm
+Disallow: /insurance
+Disallow: /dashboard
+Disallow: /training
+Disallow: /sandbox
+
+# AI assistants and answer engines are welcome to read and cite the public pages
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+User-agent: MistralAI-User
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+Disallow: /onehuman/
+Disallow: /portal
+Disallow: /ops
+Disallow: /bank
+Disallow: /crm
+Disallow: /insurance
+Disallow: /dashboard
+Disallow: /training
+Disallow: /sandbox
+
+Sitemap: https://onehuman.ai/sitemap.xml

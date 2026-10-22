@@ -1,0 +1,7 @@
+data/
+node_modules/
+tests/
+.claude/
+*.db
+*.db-wal
+*.db-shm

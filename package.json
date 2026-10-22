@@ -1,0 +1,49 @@
+{
+  "name": "onehumanai-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OneHuman \u2014 session-level control over AI browser agents: engine, SDK, Express integration, demos and research tooling",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node server/index.ts",
+    "start": "NODE_ENV=production node server/index.ts",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm test",
+    "deploy": "vercel deploy --prod",
+    "bench": "node scripts/benchmark-report.mjs",
+    "build:vercel": "node scripts/build-vercel.mjs",
+    "report": "node scripts/session-report.mjs",
+    "example": "node examples/express-bank/server.mjs",
+    "build:package": "node scripts/build-package.mjs",
+    "release": "node scripts/release.mjs",
+    "train-eval": "node scripts/training-eval.mjs",
+    "eval": "node scripts/eval-report.mjs",
+    "test:firestore": "firebase emulators:exec --only firestore --project onehuman-test --config firestore/firebase.json \"node --import ./tests/fire-setup.ts --test 'tests/**/*.test.ts'\"",
+    "build:auth": "node scripts/build-auth.mjs"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.2",
+    "express": "^5.2.1",
+    "ghost-cursor": "^1.4.2",
+    "typescript": "^5.9.0",
+    "vercel": "^59.23.2",
+    "firebase": "^12.19.0"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^9.3.1",
+    "@libsql/client": "^0.18.0",
+    "@vercel/oidc": "^4.0.0",
+    "google-auth-library": "^11.1.0"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneHumanAI/onehuman.git"
+  }
+}

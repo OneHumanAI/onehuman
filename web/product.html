@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneHuman</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/product.css">
+<script src="/sdk/onehuman.js" data-endpoint="/api/v1/signals" data-zone="[data-oh-zone]"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="/"><span class="logo" id="logo">··</span><span id="brand-name">…</span></a>
+    <nav id="nav"></nav>
+    <span class="spacer"></span>
+    <div class="user"><span class="av" id="user-av">··</span><div><strong id="user-name">Customer</strong><small id="user-sub">signed in</small></div></div>
+  </aside>
+  <main class="main" data-oh-zone>
+    <div class="topline">
+      <div><h1 id="page-title">…</h1><p id="page-sub"></p></div>
+      <span class="guard" id="guard"><i></i><span>Session protected</span></span>
+    </div>
+    <a class="ai-banner" id="ai-banner" href="#/ai" hidden><span class="spark">✦</span><span id="ai-banner-text">An AI agent is using your account.</span><b>See and choose what it may do →</b></a>
+    <div class="grid" id="content"></div>
+  </main>
+</div>
+
+<button class="fab" id="fab"><span class="spark">✦</span>Test with an AI agent<span class="fab-count" id="fab-count" hidden></span><span class="kbd">A</span></button>
+<aside class="tester" id="tester" aria-label="Test panel" aria-hidden="true">
+  <div class="t-head">
+    <div class="badge">✦</div>
+    <div><h3>Test this demo</h3><p>Try it yourself, then let an AI agent use the same account.</p></div>
+    <button class="close ghost" id="tester-close" aria-label="Close">✕</button>
+  </div>
+  <div class="t-tabs" role="tablist">
+    <button role="tab" data-tab="agent" class="on">Agent test</button>
+    <button role="tab" data-tab="results">Results <span class="count" id="res-count"></span></button>
+  </div>
+  <section class="t-body" id="tab-agent">
+    <ol class="how">
+      <li><b>1</b><span>Click around yourself. As a person, everything opens.</span></li>
+      <li><b>2</b><span>Pick a test and copy the prompt into your AI agent: Claude in Chrome, ChatGPT agent, Codex, Comet or any browser agent.</span></li>
+      <li><b>3</b><span>Watch <a href="#" data-goto="results">Results</a>: the same buttons, a different answer for the agent.</span></li>
+    </ol>
+    <div class="scen" id="scenarios" role="radiogroup" aria-label="Test scenario"></div>
+    <ol class="steps" id="prompt-steps"></ol>
+    <details><summary>Show the full prompt</summary><textarea id="prompt" readonly></textarea></details>
+    <div class="row">
+      <button class="primary btn-agent" id="copy-prompt">Copy prompt for the agent</button>
+      <button class="ghost" id="copy-link">Copy agent link</button>
+    </div>
+    <div class="row t-foot"><span id="pk-slot"></span><a id="human-link" href="#">Start over as myself</a></div>
+  </section>
+  <section class="t-body" id="tab-results" hidden>
+    <div class="sum" id="res-sum"></div>
+    <div class="res" id="res-list"><div class="empty">No actions yet. Click a button on the page, or run the agent prompt.</div></div>
+    <p class="fine">Every row is a real decision made by the server for this demo room, signed and logged. <a href="#" id="res-new">New empty room</a></p>
+  </section>
+</aside>
+
+<div class="scrim" id="scrim"></div>
+<div class="drawer" id="drawer"><button class="ghost close" id="drawer-close">✕</button><div id="drawer-body"></div></div>
+
+<dialog id="stepup">
+  <form method="dialog" id="stepup-form">
+    <h3 id="stepup-title">Security confirmation</h3>
+    <p id="stepup-text">This action needs additional confirmation.</p>
+    <div id="stepup-code-wrap"><div class="code" id="stepup-code"></div><br><input id="stepup-answer" placeholder="Enter the code" maxlength="6" autocomplete="off" style="width:100%"></div>
+    <div class="actions" style="margin-top:14px"><button class="primary" value="ok" id="stepup-ok">Confirm</button><button class="ghost" type="button" id="stepup-cancel">Cancel</button></div>
+    <p id="stepup-error" style="color:var(--bad);margin-top:10px"></p>
+  </form>
+</dialog>
+<div class="toast" id="toast"></div>
+<script src="/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,1276 @@
+{
+ "iphoneSafari": {
+  "label": "human (real person, first public test 2026-09-28)",
+  "arrival": {
+   "signature": {
+    "status": "absent",
+    "reason": "Sorğuda imza yoxdur; bu, insan sübutu deyil.",
+    "operator": null,
+    "present": {
+     "signature": false,
+     "signatureInput": false,
+     "signatureAgent": false
+    }
+   },
+   "secFetch": {
+    "site": "none",
+    "mode": "navigate",
+    "dest": "document",
+    "user": null
+   },
+   "uaMajor": 604,
+   "environment": {
+    "agentAppToken": null,
+    "clientHints": false,
+    "webkitPointer": true
+   },
+   "checkedMs": 0
+  },
+  "interactions": [
+   {
+    "atMs": 3329,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 63,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -63,
+     "target": {
+      "w": 348,
+      "h": 42,
+      "dx": 90,
+      "dy": -19
+     },
+     "coalesced": 0,
+     "at": [
+      297,
+      332
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 5721,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 64,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -64,
+     "target": {
+      "w": 342,
+      "h": 41,
+      "dx": 57,
+      "dy": -8
+     },
+     "coalesced": 0,
+     "at": [
+      264,
+      343
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 6458,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 64,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -64,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": 77,
+      "dy": -5
+     },
+     "coalesced": 0,
+     "at": [
+      284,
+      346
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 7119,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 63,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -63,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": 75,
+      "dy": -7
+     },
+     "coalesced": 0,
+     "at": [
+      282,
+      344
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 7952,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 62,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -62,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": 57,
+      "dy": 3
+     },
+     "coalesced": 0,
+     "at": [
+      264,
+      404
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 17951,
+    "webdriver": false,
+    "click": null,
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 29538,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 439,
+     "moves": 8,
+     "path": 166,
+     "travelMs": 5060,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -6194,
+       274,
+       523
+      ],
+      [
+       -4899,
+       264,
+       544
+      ],
+      [
+       -4882,
+       263,
+       540
+      ],
+      [
+       -4865,
+       262,
+       536
+      ],
+      [
+       -1797,
+       309,
+       484
+      ],
+      [
+       -1784,
+       309,
+       471
+      ],
+      [
+       -1784,
+       309,
+       455
+      ],
+      [
+       -1134,
+       292,
+       486
+      ]
+     ],
+     "downMs": -439,
+     "target": {
+      "w": 81,
+      "h": 42,
+      "dx": 25.4,
+      "dy": -1.2
+     },
+     "coalesced": 14,
+     "at": [
+      353,
+      146
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 32406,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 414,
+     "moves": 4,
+     "path": 77,
+     "travelMs": 491,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -2028,
+       278,
+       376
+      ],
+      [
+       -1570,
+       241,
+       419
+      ],
+      [
+       -1551,
+       241,
+       408
+      ],
+      [
+       -1537,
+       240,
+       399
+      ]
+     ],
+     "downMs": -414,
+     "target": {
+      "w": 70,
+      "h": 42,
+      "dx": 17.2,
+      "dy": -3.1
+     },
+     "coalesced": 6,
+     "at": [
+      59,
+      400
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 42880,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 407,
+     "moves": 7,
+     "path": 296,
+     "travelMs": 3797,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -9314,
+       264,
+       443
+      ],
+      [
+       -9298,
+       264,
+       426
+      ],
+      [
+       -9031,
+       258,
+       441
+      ],
+      [
+       -7030,
+       247,
+       367
+      ],
+      [
+       -7016,
+       256,
+       402
+      ],
+      [
+       -5530,
+       247,
+       542
+      ],
+      [
+       -5517,
+       246,
+       530
+      ]
+     ],
+     "downMs": -407,
+     "target": {
+      "w": 81,
+      "h": 42,
+      "dx": 21.4,
+      "dy": -13.2
+     },
+     "coalesced": 7,
+     "at": [
+      336,
+      485
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 44399,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 429,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -429,
+     "target": {
+      "w": 81,
+      "h": 42,
+      "dx": -4.6,
+      "dy": -2.2
+     },
+     "coalesced": 0,
+     "at": [
+      310,
+      496
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 48895,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 66,
+     "moves": 6,
+     "path": 213,
+     "travelMs": 1216,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -4368,
+       273,
+       395
+      ],
+      [
+       -4352,
+       281,
+       419
+      ],
+      [
+       -3768,
+       268,
+       491
+      ],
+      [
+       -3752,
+       282,
+       491
+      ],
+      [
+       -3168,
+       289,
+       404
+      ],
+      [
+       -3152,
+       302,
+       404
+      ]
+     ],
+     "downMs": -66,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": -111,
+      "dy": -11
+     },
+     "coalesced": 10,
+     "at": [
+      96,
+      340
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 56973,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 60,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -60,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": -137,
+      "dy": -3
+     },
+     "coalesced": 0,
+     "at": [
+      70,
+      348
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 92901,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 74,
+     "moves": 13,
+     "path": 236,
+     "travelMs": 6915,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -34233,
+       279,
+       514
+      ],
+      [
+       -34216,
+       272,
+       501
+      ],
+      [
+       -33500,
+       291,
+       511
+      ],
+      [
+       -33133,
+       314,
+       531
+      ],
+      [
+       -31681,
+       311,
+       581
+      ],
+      [
+       -31668,
+       311,
+       573
+      ],
+      [
+       -31651,
+       310,
+       565
+      ],
+      [
+       -28985,
+       305,
+       551
+      ],
+      [
+       -28968,
+       305,
+       542
+      ],
+      [
+       -28951,
+       305,
+       529
+      ],
+      [
+       -27332,
+       330,
+       514
+      ],
+      [
+       -27319,
+       330,
+       533
+      ],
+      [
+       -27318,
+       330,
+       551
+      ]
+     ],
+     "downMs": -74,
+     "target": {
+      "w": 342,
+      "h": 41,
+      "dx": 115,
+      "dy": -20
+     },
+     "coalesced": 21,
+     "at": [
+      322,
+      331
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 94067,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 75,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -75,
+     "target": {
+      "w": 342,
+      "h": 41,
+      "dx": 116,
+      "dy": -19
+     },
+     "coalesced": 0,
+     "at": [
+      323,
+      332
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 95469,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 99,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -99,
+     "target": {
+      "w": 341,
+      "h": 41,
+      "dx": 89,
+      "dy": 1
+     },
+     "coalesced": 0,
+     "at": [
+      296,
+      352
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 98134,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 65,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -65,
+     "target": {
+      "w": 343,
+      "h": 41,
+      "dx": 95,
+      "dy": 3
+     },
+     "coalesced": 0,
+     "at": [
+      302,
+      354
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 99416,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 47,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [],
+     "downMs": -47,
+     "target": {
+      "w": 344,
+      "h": 42,
+      "dx": 97,
+      "dy": 4
+     },
+     "coalesced": 0,
+     "at": [
+      304,
+      355
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 102015,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 61,
+     "moves": 1,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 0,
+     "hidden": false,
+     "traj": [
+      [
+       -1132,
+       271,
+       518
+      ]
+     ],
+     "downMs": -61,
+     "target": {
+      "w": 80,
+      "h": 41,
+      "dx": 11.4,
+      "dy": -8.2
+     },
+     "coalesced": 1,
+     "at": [
+      352,
+      302
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   }
+  ]
+ },
+ "androidChrome": {
+  "label": "human (real person, first public test 2026-09-28)",
+  "arrival": {
+   "signature": {
+    "status": "absent",
+    "reason": "Sorğuda imza yoxdur; bu, insan sübutu deyil.",
+    "operator": null,
+    "present": {
+     "signature": false,
+     "signatureInput": false,
+     "signatureAgent": false
+    }
+   },
+   "secFetch": {
+    "site": "cross-site",
+    "mode": "navigate",
+    "dest": "document",
+    "user": null
+   },
+   "uaMajor": 153,
+   "environment": {
+    "agentAppToken": null,
+    "clientHints": true
+   },
+   "checkedMs": 0
+  },
+  "interactions": [
+   {
+    "atMs": 12988,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 65,
+     "moves": 8,
+     "path": 417,
+     "travelMs": 6744,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [
+      [
+       -8383.6,
+       319,
+       634
+      ],
+      [
+       -8367,
+       318,
+       623
+      ],
+      [
+       -7619.1,
+       341,
+       473
+      ],
+      [
+       -7612.1,
+       339,
+       484
+      ],
+      [
+       -6142.4,
+       327,
+       595
+      ],
+      [
+       -6127.2,
+       314,
+       597
+      ],
+      [
+       -2027.1,
+       316,
+       554
+      ],
+      [
+       -1639.7,
+       344,
+       483
+      ]
+     ],
+     "downMs": -65.4,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -89.3,
+      "dy": 16.3
+     },
+     "coalesced": 17,
+     "at": [
+      114,
+      369
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 14934,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 70,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -69.9,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -120.3,
+      "dy": 3.8
+     },
+     "coalesced": 0,
+     "at": [
+      83,
+      407
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 19558,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 57,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -56.8,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -133.3,
+      "dy": -2.7
+     },
+     "coalesced": 0,
+     "at": [
+      70,
+      350
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 21247,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 68,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -68,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -141.3,
+      "dy": 1.3
+     },
+     "coalesced": 0,
+     "at": [
+      62,
+      354
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 22275,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 97,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -97,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": 107.7,
+      "dy": -10.7
+     },
+     "coalesced": 0,
+     "at": [
+      311,
+      342
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 23320,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 67,
+     "moves": 2,
+     "path": 13,
+     "travelMs": 8,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [
+      [
+       -640.3,
+       296,
+       582
+      ],
+      [
+       -632,
+       294,
+       568
+      ]
+     ],
+     "downMs": -67.4,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -117.3,
+      "dy": 10.6
+     },
+     "coalesced": 4,
+     "at": [
+      86,
+      285
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 24006,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 2,
+     "holdMs": 56,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -55.5,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -51.3,
+      "dy": 10.6
+     },
+     "coalesced": 0,
+     "at": [
+      152,
+      285
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 24485,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 71,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -71.2,
+     "target": {
+      "w": 340,
+      "h": 42,
+      "dx": -68.3,
+      "dy": 5.6
+     },
+     "coalesced": 0,
+     "at": [
+      135,
+      280
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 24916,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 82,
+     "moves": 0,
+     "path": 0,
+     "travelMs": 0,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [],
+     "downMs": -81.7,
+     "target": {
+      "w": 341,
+      "h": 43,
+      "dx": -77.3,
+      "dy": 4.6
+     },
+     "coalesced": 0,
+     "at": [
+      126,
+      279
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 26884,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 71,
+     "moves": 2,
+     "path": 8,
+     "travelMs": 7,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [
+      [
+       -1330.6,
+       321,
+       586
+      ],
+      [
+       -1324.1,
+       321,
+       577
+      ]
+     ],
+     "downMs": -71,
+     "target": {
+      "w": 81,
+      "h": 43,
+      "dx": 6.7,
+      "dy": -7.2
+     },
+     "coalesced": 3,
+     "at": [
+      340,
+      196
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   },
+   {
+    "atMs": 30275,
+    "webdriver": false,
+    "click": {
+     "trusted": true,
+     "pointer": "touch",
+     "detail": 1,
+     "holdMs": 50,
+     "moves": 9,
+     "path": 316,
+     "travelMs": 1534,
+     "pressure": 1,
+     "hidden": false,
+     "traj": [
+      [
+       -1918.7,
+       310,
+       570
+      ],
+      [
+       -1911,
+       308,
+       556
+      ],
+      [
+       -1586.8,
+       318,
+       523
+      ],
+      [
+       -1580,
+       309,
+       524
+      ],
+      [
+       -1005.9,
+       264,
+       560
+      ],
+      [
+       -997.2,
+       272,
+       558
+      ],
+      [
+       -767.6,
+       335,
+       620
+      ],
+      [
+       -761.2,
+       333,
+       605
+      ],
+      [
+       -384.9,
+       294,
+       525
+      ]
+     ],
+     "downMs": -49.7,
+     "target": {
+      "w": 70,
+      "h": 43,
+      "dx": -7.8,
+      "dy": 6.7
+     },
+     "coalesced": 18,
+     "at": [
+      60,
+      388
+     ]
+    },
+    "keys": 0,
+    "keyIntervals": [],
+    "inputEvents": 0,
+    "paste": false
+   }
+  ]
+ }
+}

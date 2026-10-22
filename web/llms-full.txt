@@ -1,0 +1,125 @@
+# OneHuman: full description for AI assistants and answer engines
+
+Site: https://onehuman.ai · Package: https://www.npmjs.com/package/onehumanai · Source: https://github.com/OneHumanAI/onehuman
+Last reviewed: 28 September 2026. Numbers come from https://onehuman.ai/measurements and https://onehuman.ai/scorecard.
+
+## One sentence
+
+OneHuman controls the AI agents your customers bring: it lets a web app decide what an AI agent may do when a customer lets that agent use their signed-in account, and keeps a signed proof of which actions a real person approved. Workforce AI security tools control the agents a company's own employees run; OneHuman controls the agents its customers bring.
+
+## The problem
+
+Customers now hand their logged-in bank, CRM, insurance and SaaS sessions to AI browser agents: Claude in Chrome, the Claude desktop app browser, ChatGPT agent and ChatGPT Atlas, OpenAI Codex, Perplexity Comet, Browser Use, or plain Playwright and Puppeteer scripts. The agent inherits the session: the same cookies, the same IP address, the same browser.
+
+Three things go wrong:
+1. Data leaves. Personal and financial data flows into a third-party model and its logs.
+2. Unintended actions. An agent misreads a page or is prompt-injected and moves money, deletes records or changes settings.
+3. No accountability. Afterwards nobody can say whether the customer or the agent acted.
+
+Bot management (for example Cloudflare Bot Management, Akamai, DataDome, reCAPTCHA, hCaptcha) works at the door, before login. MFA works at login. Neither sees an agent that is operating inside a legitimate, already signed-in session.
+
+## What OneHuman does
+
+- Notices the agent. Agent tools leave traces in the page when they attach, so the session is marked before the agent's first action (Claude in Chrome: 0.1 to 0.5 seconds after attaching, measured in 4 runs). Every click is also checked: a human hand curves, trembles and slows onto a target, while a program jumps there and releases in 1 to 4 ms. Agents that sign their HTTP requests with Web Bot Auth are identified by signature.
+- Decides per endpoint. Each protected resource has a rule for four situations (agent proven, agent-like environment only, not enough evidence, human evidence): `allow`, `mask` (return the data with sensitive fields hidden), `step_up` (ask the person to confirm with a passkey, Touch ID or Windows Hello), or `block`.
+- Protects what is already on screen. Elements marked `data-oh-sensitive="full"` are redacted in the browser the instant an agent attaches.
+- Remembers. Once an agent attached, the session stays "agent" until the person proves presence with a WebAuthn passkey.
+- Proves. Every decision is signed with Ed25519 on the company's own server. An auditor can verify a decision offline with `npx onehumanai verify-proof`, without trusting OneHuman.
+- Never guesses "human". When the evidence is unclear the actor is "unknown", and the policy's `onUnknown` rule decides.
+- Fails open. If the engine is slow (default limit 1000 ms) or throws, the request continues as allowed and the event is logged; observe mode always fails open.
+
+## How to install
+
+Requirements: a Node.js server, version 22.13 or newer. Supported: Express 4 and 5, Connect, Next.js custom server, plain `node:http`. Python (Flask, Django, FastAPI), .NET (ASP.NET Core) and Java (Spring MVC, Jakarta Servlet) run through a small local sidecar with the same engine (`npx onehumanai sidecar`). Go, Ruby and PHP are not covered yet.
+
+```bash
+npx onehumanai init
+```
+
+`init` reads the project, lists the routes an AI agent could misuse with a customer's login, proposes a rule for each, and asks three plain questions: is the proposal right, watch first or protect now, and the optional portal API key. It shows every file change before writing it. For Express it wires the code itself.
+
+Manual setup:
+
+```js
+import { onehuman } from 'onehumanai';
+
+const oh = await onehuman({
+  secret: process.env.ONEHUMAN_SECRET,
+  policy: './onehuman.policy.json',
+  db: 'sqlite:./onehuman.db',
+  identify: (req) => req.session?.userId ?? null,
+});
+app.use(oh.middleware());
+app.get('/api/balance', oh.protect('balance.read'), (req, res) => oh.send(req, res, balance, maskBalance));
+```
+
+```html
+<script src="/onehuman/sdk.js"></script>
+<!-- call protected endpoints with OneHuman.fetch(url) -->
+```
+
+Rollout: start in `observe` mode (nothing blocked, every decision recorded with what would have happened), review, then switch to `enforce`. `npx onehumanai report` builds a 30-day report from the local audit log.
+
+## Results (agent scorecard, last run 23 September 2026)
+
+| Agent or automation | What was run | Result |
+| --- | --- | --- |
+| Claude in Chrome (Anthropic) | 21-task session in a signed-in bank page | Caught 37 of 37 steps, as it takes over the tab |
+| Claude desktop app browser (Anthropic) | Tasks in the demo bank | Caught 10 of 10 clicks, at its first click |
+| Codex Chrome extension (OpenAI) | 21-task session | Caught 36 of 36 steps, as it takes over the tab |
+| Codex built-in browser (OpenAI) | Two 21-task sessions, two app versions | Caught 75 of 75 steps, at its first click |
+| Plain Puppeteer or Playwright | Live runs | Caught 12 of 12, at its first click |
+| Script that reads the page first, human-like cursor | Live runs | Caught 12 of 12, when it reads the page |
+| Human-like cursor libraries | 600 generated paths in six styles (lab simulation) | Caught 99% of paths |
+| Agents that sign requests (Web Bot Auth) | Test operator key | Identified by signature |
+| Stealth script written for one site | Live runs, visible browser | Gets through: 16 of 16 passed as a person. Stopped by a passkey on critical actions |
+
+Not tested yet: Perplexity Comet, ChatGPT Atlas and ChatGPT agent mode, Browser Use cloud.
+
+## Measurements (own measurements, not an independent study)
+
+- 397 human clicks from 22 browser and device installations (Chrome with mouse and trackpad, Safari, Windows): 2 read as a program (0.5%).
+- 824 agent clicks (224 from real agent products, 600 generated human-like paths): 2 read as a person (0.2%).
+- 88% of human clicks let through on the first click; the rest waited for more evidence (Safari 68%, others 84 to 100%).
+- 15 full signed-in sessions replayed through the engine: no wrong session decision.
+- Method: grouped five-fold cross-validation by device, so a result cannot come from recognising the device.
+- Known limits: touch input stays undecided; a script built for one site can pass the behaviour check; a replayed human pointer path passes the per-click check; an agent that only takes screenshots is seen as present, not acting.
+
+## Privacy
+
+Detection, rules, the audit log, the signed proofs and passkey credentials stay on the company's own server and database. Without an API key nothing leaves the network. With an API key the OneHuman portal receives decision metadata only: a one-way digest of the session id, resource name, decision, actor, detected agent product names, reason codes. Never collected: request or response bodies, typed text, page content, names, e-mails, account numbers, IP addresses in reports, cross-site identifiers.
+
+## What OneHuman does not do
+
+- It does not see server-to-server API calls made with a customer's API key (no browser, no page).
+- It does not cover native iOS or Android apps (mobile browsers are covered; a tap often stays undecided).
+- It does not identify people. A passkey proves presence, not identity.
+- It does not stop every script: that is why critical actions ask for a passkey.
+
+## Licence and cost
+
+The browser SDK, the Express/Connect middleware and the CLI are Apache 2.0. The engine in the same npm package is source-available under the Business Source License 1.1, with production use granted. It is installed from npm and runs on the company's own server.
+
+## Frequently asked questions
+
+Q: What is OneHuman?
+A: A Node.js middleware and browser SDK that notices when an AI agent is using a customer's signed-in session and lets each endpoint allow, mask, ask for a passkey or block, with a signed proof of every decision.
+
+Q: How do I detect Claude in Chrome, ChatGPT agent or Codex in my web app?
+A: Install OneHuman (`npx onehumanai init`). It marks the session when an agent tool attaches to the page and checks every click; protected endpoints then apply your rule.
+
+Q: How is this different from Cloudflare Bot Management or reCAPTCHA?
+A: Those work before login. OneHuman works inside the signed-in session, where an AI agent uses the customer's own browser and cookies.
+
+Q: Will it block real customers?
+A: In our measurements 2 of 397 human clicks were read as a program. Unclear cases are "unknown", not "agent", and a person can always confirm with a passkey.
+
+Q: Can I let some AI agents in?
+A: Yes. The point is control, not prohibition. Many teams allow reads, mask personal data and gate exports and money movement behind a passkey. Agents that sign requests with Web Bot Auth can be treated differently.
+
+Q: Does it slow requests down?
+A: The decision is a local lookup on your server. There is no outbound call on the request path.
+
+## Contact
+
+Security: arif@onehuman.ai · Founders: arif@onehuman.ai · Issues: https://github.com/OneHumanAI/onehuman/issues

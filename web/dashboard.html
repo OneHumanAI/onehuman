@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneHuman · Qayda paneli</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" id="back" href="/"><span class="dot"></span>OneHuman <span class="sub">Qayda paneli</span></a>
+  <nav><a id="lab-link" href="/">← Laboratoriyaya qayıt</a></nav>
+</header>
+<main>
+  <section class="panel">
+    <div class="eyebrow">Qayda · <span id="policy-version">…</span></div>
+    <h2>Qorunan resurslar və qərarlar</h2>
+    <p class="small muted">Hər resurs üçün aktor qiymətləndirməsinə görə qərar seçilir. “Naməlum” üçün <em>allow</em> seçmək “naməlum = insan” demək deyil; bu, şirkətin risk qərarıdır və audit-də görünür.</p>
+    <div class="row" style="margin:10px 0">
+      <label>Rejim <select id="enforcement"><option value="enforce">İcra (enforce)</option><option value="observe">Müşahidə (observe)</option></select></label>
+      <button id="add-rule" class="ghost">+ Resurs əlavə et</button>
+      <button id="save" class="primary">Yeni versiya kimi saxla</button>
+      <button id="reset" class="ghost">Defolta qaytar</button>
+      <span id="save-status" class="small muted"></span>
+    </div>
+    <table id="rules"><thead><tr><th>Resurs</th><th>Başlıq</th><th>Agent ehtimalı</th><th>Mühit izi</th><th>Naməlum</th><th>İnsanabənzər</th><th>Hansı sübut səviyyəsi</th><th>Min bal</th><th></th></tr></thead><tbody></tbody></table>
+    <h3>Versiya tarixçəsi</h3>
+    <ul id="history" class="small"></ul>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <div class="eyebrow">Benchmark</div>
+    <h2>Etiketlərə görə nəticə</h2>
+    <table id="bench"><thead><tr><th>Qrup</th><th>Sessiya</th><th>≥3 qərar</th><th>Aşkarlanan</th><th>Məlumatdan əvvəl</th><th>Blok</th><th>Step-up</th><th>Mask</th><th>Həssas data verilib</th><th>Sonda naməlum</th><th>Median gecikmə</th><th>Median ilk qərar</th></tr></thead><tbody></tbody></table>
+    <div class="facts" id="bench-facts"></div>
+    <p id="bench-note" class="small muted"></p>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <div class="eyebrow">Audit zənciri</div>
+    <h2>Qərarlar <span id="chain" class="tag"></span></h2>
+    <table id="audit"><thead><tr><th>#</th><th>Vaxt</th><th>Sessiya</th><th>Resurs</th><th>Qərar</th><th>Aktor</th><th>Səbəblər</th><th>Qayda / siqnal</th><th>Hash</th></tr></thead><tbody></tbody></table>
+  </section>
+</main>
+<script src="/dashboard.js"></script>
+</body>
+</html>

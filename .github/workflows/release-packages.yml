@@ -1,0 +1,86 @@
+# Publish the Python, .NET and Java adapters. Run it from the Actions tab ("Run workflow") and pick the package.
+# Each job runs the adapter's tests against a real sidecar first; nothing is published if they fail.
+#   python: PyPI trusted publishing (no secret; the "pypi" environment and a pending publisher on pypi.org)
+#   dotnet: secret NUGET_API_KEY
+#   java:   secrets CENTRAL_USERNAME, CENTRAL_TOKEN (a Central Portal user token). The signing key is made for each
+#           release, published to keyserver.ubuntu.com and checked there before the upload, so no GPG key is kept.
+name: Release packages
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Which package
+        required: true
+        type: choice
+        options: [python, dotnet, java]
+permissions:
+  contents: read
+jobs:
+  python:
+    if: inputs.package == 'python'
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install flask django fastapi httpx build twine
+      - run: python -m unittest discover -s packages/python/tests -v
+        env: { ONEHUMAN_REPO: '${{ github.workspace }}' }
+      - run: python -m build packages/python && twine check packages/python/dist/*
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with: { packages-dir: packages/python/dist }
+
+  dotnet:
+    if: inputs.package == 'dotnet'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: node scripts/with-sidecar.mjs -- dotnet run --project packages/dotnet/tests/Smoke
+      - run: dotnet pack packages/dotnet/OneHumanAI.AspNetCore -c Release -o out
+      - run: dotnet nuget push "out/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+        env: { NUGET_API_KEY: '${{ secrets.NUGET_API_KEY }}' }
+
+  java:
+    if: inputs.package == 'java'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_TOKEN
+      - run: node scripts/with-sidecar.mjs -- mvn -B -f packages/java/pom.xml test
+      - name: Signing key for this release, published and visible on the keyserver before the upload
+        run: |
+          export GNUPGHOME="$(mktemp -d)"; echo "GNUPGHOME=$GNUPGHOME" >> "$GITHUB_ENV"
+          gpg --batch --passphrase '' --quick-gen-key "OneHuman release <arif@onehuman.ai>" ed25519 sign 30d
+          FPR=$(gpg --list-keys --with-colons | awk -F: '/^fpr/ {print $10; exit}')
+          gpg --armor --export "$FPR" > pub.asc
+          curl -fsS --data-urlencode "keytext@pub.asc" https://keyserver.ubuntu.com/pks/add >/dev/null
+          for i in $(seq 1 30); do curl -fsS "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x$FPR" >/dev/null && break; sleep 10; done
+          echo "Signing with $FPR"
+      - run: mvn -B -f packages/java/pom.xml -P release -DskipTests deploy
+        env:
+          CENTRAL_USERNAME: '${{ secrets.CENTRAL_USERNAME }}'
+          CENTRAL_TOKEN: '${{ secrets.CENTRAL_TOKEN }}'

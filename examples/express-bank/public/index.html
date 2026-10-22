@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acme Bank</title>
+<!-- OneHuman: one script tag; the endpoint is derived from where the SDK is served -->
+<script src="/onehuman/sdk.js"></script>
+<style>
+  body { font: 15px/1.5 -apple-system, Segoe UI, sans-serif; background: #f4f6fa; color: #0f172a; margin: 0; padding: 32px 16px; }
+  .card { max-width: 520px; margin: 0 auto 16px; background: #fff; border-radius: 16px; padding: 22px; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+  .amount { font-size: 36px; font-weight: 800; margin: 8px 0; }
+  button { font: inherit; padding: 10px 16px; border: 0; border-radius: 10px; background: #2563eb; color: #fff; cursor: pointer; }
+  .note { color: #64748b; font-size: 13px; }
+  .warn { background: #fee2e2; color: #b91c1c; padding: 10px 12px; border-radius: 10px; font-size: 14px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>Acme Bank · Current account</h2>
+  <!-- data-oh-sensitive="full" marks what the SDK redacts the instant an agent attaches -->
+  <div class="amount" id="amount">•••• USD</div>
+  <div class="note" id="iban"></div>
+  <button id="show">Show balance</button>
+  <div id="msg"></div>
+</div>
+<div class="card">
+  <h3>Transfer</h3>
+  <button id="transfer">Send 100 USD</button>
+  <div id="tmsg"></div>
+</div>
+<script>
+  const $ = (s) => document.querySelector(s);
+  async function call(url, init) {
+    // OneHuman.fetch attaches the click telemetry; decisions arrive as 200 (allow/mask), 403 (block) or 428 (step-up)
+    const r = await OneHuman.fetch(url, init);
+    return { status: r.status, body: await r.json() };
+  }
+  $('#show').onclick = async () => {
+    const { status, body } = await call('/api/balance');
+    if (status === 200) {
+      const full = body.balance !== null;
+      $('#amount').textContent = full ? body.balance.toFixed(2) + ' ' + body.currency : '•••• ' + body.currency;
+      $('#amount').setAttribute('data-oh-sensitive', full ? 'full' : 'masked');
+      $('#iban').textContent = body.iban;
+      $('#msg').innerHTML = full ? '' : '<div class="warn">Some details are hidden: an AI agent is in this session.</div>';
+    } else {
+      $('#amount').textContent = '•••• USD';
+      $('#msg').innerHTML = '<div class="warn">' + (status === 403 ? 'Protected: an AI agent is operating this session.' : 'Confirmation required.') + '</div>';
+    }
+  };
+  $('#transfer').onclick = async () => {
+    const { status, body } = await call('/api/transfer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ to: 'GB..1944', amount: 100 }) });
+    $('#tmsg').innerHTML = status === 200 ? 'Transfer accepted.' : '<div class="warn">' + (status === 428 ? (body.stepUp && body.stepUp.approve ? 'An AI agent asked for this. Only the account owner can approve it, with a passkey.' : 'Confirm the transfer (code: ' + (body.stepUp && body.stepUp.challenge) + ').') : 'Transfer refused: an AI agent is operating this session.') + '</div>';
+  };
+  document.addEventListener('onehuman:sealed', () => { $('#amount').textContent = '•••• USD'; $('#msg').innerHTML = '<div class="warn">An AI agent joined this session. What was on screen is now hidden.</div>'; });
+</script>
+</body>
+</html>

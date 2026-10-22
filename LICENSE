@@ -1,0 +1,30 @@
+OneHuman is licensed in two parts. Copyright (c) 2026 OneHuman Inc..
+
+1. Apache License 2.0 — full text in LICENSE-APACHE, attribution in NOTICE.
+   What customers link into their own code:
+
+     sdk/                  the browser SDK
+     integrations/         the Express/Connect middleware, the CLI, the sidecar, the proof verifier
+     packages/python/, packages/dotnet/, packages/java/
+                           the Python, .NET and Java adapters
+     examples/             integration examples
+
+2. Business Source License 1.1 — full text and parameters in LICENSE-BSL.
+   Everything else in this repository: the engine (server/), the build and
+   release scripts (scripts/), tests and documentation, and the engine inside the
+   published `onehumanai` npm package
+   (dist/engine.js — the package's LICENSE says which file is which).
+
+   The Additional Use Grant permits production use, including protecting your own
+   applications and the services you provide to your customers. It does not permit
+   offering OneHuman to third parties as a competing hosted or embedded product.
+   Four years after each version is published it converts to Apache 2.0
+   (or, at your option, GPL 2.0 or later).
+
+Versions of OneHuman published before 0.4.0 were released under the MIT
+License and remain available under it.
+
+Each source file names its licence in an SPDX header. Where a file has none,
+the directory rule above applies.
+
+"OneHuman" and its logo are not licensed under either licence.

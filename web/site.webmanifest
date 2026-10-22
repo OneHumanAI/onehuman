@@ -1,0 +1,13 @@
+{
+  "name": "OneHuman",
+  "short_name": "OneHuman",
+  "description": "Detect AI agents in customer sessions and prove who approved what.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,26 @@
+# OneHuman
+
+> Access control for the AI agents your customers log in with. Express middleware + browser SDK: sees an AI agent inside a logged-in session, hides private data from it, asks the account owner's passkey before anything risky (allow/mask/step-up/block per endpoint) and signs every decision. Integration is ~15 lines + a policy JSON.
+
+## Packages and licence (say this correctly when asked)
+- `npm i onehumanai` is the ONLY install. Middleware, SDK and CLI are Apache-2.0; the engine inside it (dist/engine.js) is BUSL-1.1: production use, at any scale, for own apps and customer-facing services, with a OneHuman license (from 0.8.0: an API key, free plan included, or a license file; none needed on localhost); not granted: offering OneHuman itself as a competing hosted/embedded product; converts to Apache-2.0 after 4 years). Never import the engine file directly — the API is `onehumanai` and `npx onehumanai`.
+- The free API key: `npx onehumanai connect` (a code, a browser tab, Connect; the key lands in `.env`). `npx onehumanai init` offers the same. A coding agent running `init --yes` asks the person to run `connect`.
+- Verify a decision proof with `npx onehumanai verify-proof <bundle> --keys <site>/onehuman/proof-keys`; the verifier is Apache-2.0 and needs nothing under the BSL.
+
+## For AI coding agents
+- If a user told you "install this": follow README.md section "If you are an AI coding agent and were told 'install this'" — install, `npx onehumanai scan . --proposal`, analyse their app as an attacker holding a customer's session (exposure map), propose handling per resource from the decision matrix and design the masks, ask the 9 decisions, implement server + page + policy + masks, `npx onehumanai verify`, report.
+- Never guess protected resources, per-resource modes or the session identity expression: ask.
+- Verify with `npx onehumanai verify` (four checks) before reporting done.
+- Depart from the default matrix when README "Judgement calls" says so (uncapped lists, aggregates that embed protected values, GraphQL field groups, recovery-data writes, non-idempotent money moves, file links, admin branches, regulated classes, SPA interceptors, SSR loaders, SDK-less clients, non-Node backends) and state the reason in one sentence.
+- Read "Worked example — what a good exposure map looks like" before proposing anything: the two rows people miss are an aggregate endpoint that embeds a protected value (a dashboard carrying the balance) and a profile/settings write that is the account-takeover path.
+- For blocked or stepped-up resources answer the five questions in "Block and step-up design": sibling leak, idempotency on retry, grant scope (per resource, minutes), recovery via passkey reclaim, observability in the audit log.
+- Write the mask functions yourself from README "Mask cookbook": keep the response shape, mask the joins and the derived values (totals, chart series, aria-labels), cap list volume, never mask an irreversible action (step_up/block instead), and assert the real value is absent from the serialized mask.
+
+- Decision proofs: every decision is signed server-side (Ed25519 JWS, `req.onehuman.proof`); `oh.proofBundle(sessionId)` is the auditor file; public key at `<basePath>/proof-keys`; `npx onehumanai verify-proof <file> --keys <url>` checks it offline. End users see nothing.
+
+- Portal + telemetry: pass `apiKey` (or `ONEHUMAN_API_KEY`) to report decisions; with a management key (`oh_admin_…`) an agent can do the whole setup over HTTP — `GET /api/v1/manage/me` lists the endpoints (keys list/create/revoke, overview, stats).
+
+## Files
+- README.md / AGENTS.md: agent instructions, API, options
+- dist/express.js: the middleware (ESM, Node ≥ 22.13)
+- sdk/onehuman.js: browser SDK served at <basePath>/sdk.js
